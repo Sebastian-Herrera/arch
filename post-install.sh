@@ -1,5 +1,4 @@
 #!/bin/sh
-
 timedatectl set-ntp true
 ln -sf /usr/share/zoneinfo/America/Bogota /etc/localtime
 hwclock --systohc
