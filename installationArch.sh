@@ -17,7 +17,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cp -rfv post-install.sh /mnt/root/
 chmod 777 /mnt/root/post-install.sh
 
-arch-chroot /mnt
+arch-chroot /mnt /root/post-install.sh
 
 umount -R /mnt
 reboot
