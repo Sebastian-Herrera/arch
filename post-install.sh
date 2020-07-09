@@ -6,7 +6,7 @@ hwclock --systohc
 sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 
-sed '/week 7/a\first_weekday   2\nfirst_workday   2' /usr/share/i18n/locales/en_US
+sed -i '/week 7/a\first_weekday   2\nfirst_workday   2' /usr/share/i18n/locales/en_US
 locale-gen
 
 echo "LANG=en-US.UTF-8" >> /etc/locale.conf
