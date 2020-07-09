@@ -33,7 +33,7 @@ hostnamectl set-hostname herrera
 
 echo "127.0.0.0       localhost\n::1             localhost\n127.0.1.1       herrera.localdomain     herrera" >> /etc/hosts
 
-passwd
+passwd herrera
 
 useradd -m -G wheel herrera -c "Sebastian Herrera"
 passwd
