@@ -33,10 +33,10 @@ hostnamectl set-hostname herrera
 
 echo "127.0.0.0       localhost\n::1             localhost\n127.0.1.1       herrera.localdomain     herrera" >> /etc/hosts
 
-passwd herrera
+passwd
 
 useradd -m -G wheel herrera -c "Sebastian Herrera"
-passwd
+passwd herrera
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 
 systemctl enable NetworkManager
