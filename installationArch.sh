@@ -4,7 +4,7 @@ mkswap /dev/sda2
 swapon /dev/sda2
 
 pacman -Syy
-pacman -S reflector
+pacman -S --noconfirm reflector
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 reflector --sort rate -l 5 --save /etc/pacman.d/mirrorlist
 
