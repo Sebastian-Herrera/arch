@@ -18,3 +18,6 @@ cp -rfv post-install.sh /mnt/root/
 chmod 777 /mnt/root/post-install.sh
 
 arch-chroot /mnt
+
+umount -R /mnt
+reboot
