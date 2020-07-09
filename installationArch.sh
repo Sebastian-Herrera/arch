@@ -29,7 +29,7 @@ locale-gen
 echo "LANG=en-US.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=es" >> /etc/vconsole.conf
 
-hostnamectl set-hostname herrera
+echo "herrera" >> /etc/hostname
 
 echo "127.0.0.0       localhost\n::1             localhost\n127.0.1.1       herrera.localdomain     herrera" >> /etc/hosts
 
