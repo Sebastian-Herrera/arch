@@ -14,7 +14,7 @@ echo "KEYMAP=es" >> /etc/vconsole.conf
 
 echo "herrera" >> /etc/hostname
 
-echo "127.0.0.0       localhost\n::1             localhost\n127.0.1.1       herrera.localdomain     herrera" >> /etc/hosts
+echo -e "127.0.0.0       localhost\n::1             localhost\n127.0.1.1       herrera.localdomain     herrera" >> /etc/hosts
 
 echo "0" | passwd -S
 
