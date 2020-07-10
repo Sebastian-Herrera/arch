@@ -6,6 +6,7 @@ sudo pacman -Sy
 
 git clone https://aur.archlinux.org/yay.git
 (cd yay && makepkg -si --noconfirm)
+rm -r yay/
 
 yay -S --noconfirm xdg-user-dirs zsh neofetch qtile alacritty 
 #zsh-theme-powerlevel10k-git 
@@ -32,6 +33,7 @@ git clone https://github.com/cylgom/ly.git
 (cd ly && make github && make && sudo make install)
 sudo systemctl enable ly.service
 sudo systemctl disable getty@tty1.service
+rm -r ly/
 
 #startx
 reboot
