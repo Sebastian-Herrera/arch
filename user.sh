@@ -8,15 +8,14 @@ git clone https://aur.archlinux.org/yay.git
 (cd yay && makepkg -si --noconfirm)
 rm -r yay/
 
-yay -S --noconfirm xdg-user-dirs zsh neofetch qtile alacritty 
+yay -S --noconfirm xdg-user-dirs neofetch qtile alacritty google-chrome
 #zsh-theme-powerlevel10k-git 
-#google-chrome 
 
 xdg-user-dirs-update
 
-chsh -s $(which zsh)
+#chsh -s $(which zsh)
 #sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-source ~/.zshrc
+#source ~/.zshrc
 #echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
 yay -S --noconfirm nvidia-340xx-lts nvidia-340xx-settings 
@@ -35,5 +34,6 @@ sudo systemctl enable ly.service
 sudo systemctl disable getty@tty1.service
 rm -r ly/
 
+rm ./user.sh
 #startx
 reboot
