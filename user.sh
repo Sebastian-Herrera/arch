@@ -7,7 +7,8 @@ sudo pacman -Sy
 git clone https://aur.archlinux.org/yay.git
 (cd yay && makepkg -si --noconfirm)
 
-yay -S --noconfirm xdg-user-dirs zsh zsh-theme-powerlevel10k-git neofetch qtile alacritty 
+yay -S --noconfirm xdg-user-dirs zsh neofetch qtile alacritty 
+#zsh-theme-powerlevel10k-git 
 #google-chrome 
 
 xdg-user-dirs-update
