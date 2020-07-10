@@ -17,12 +17,13 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 cp -rfv ~/arch/post-install.sh /mnt/root/
 chmod 777 /mnt/root/post-install.sh
-
 arch-chroot /mnt /root/post-install.sh
+rm mnt/root/post-install.sh
 
 cp -rfv ~/arch/user.sh /mnt/home/herrera/
 chmod 777 /mnt/home/herrera/user.sh
+arch-chroot /mnt /home/herrera/user.sh - herrera
+rm mnt/home/herrera/user.sh
 
-rm mnt/root/post-install.sh
 umount -R /mnt
 reboot
