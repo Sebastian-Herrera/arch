@@ -6,7 +6,7 @@ sudo pacman -Sy
 
 git clone https://aur.archlinux.org/yay.git
 (cd yay && makepkg -si --noconfirm)
-rm -r yay/
+rm -rfv yay/
 
 yay -S --noconfirm xdg-user-dirs neofetch qtile alacritty google-chrome
 #zsh-theme-powerlevel10k-git 
@@ -34,7 +34,7 @@ git clone https://github.com/cylgom/ly.git
 (cd ly && make github && make && sudo make install)
 sudo systemctl enable ly.service
 sudo systemctl disable getty@tty1.service
-rm -r ly/
+rm -rfv ly/
 
 rm ./user.sh
 #startx
