@@ -18,7 +18,7 @@ xdg-user-dirs-update
 #source ~/.zshrc
 #echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
-yay -S --noconfirm nvidia-340xx-lts nvidia-340xx-settings 
+yay -S --noconfirm nvidia-340xx nvidia-340xx-settings 
 #nvidia-340xx-utils
 #opencl-nvidia-340xx
 sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
