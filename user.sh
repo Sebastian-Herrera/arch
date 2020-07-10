@@ -28,6 +28,8 @@ mkdir -p ~/.config/qtile/
 cp /usr/share/doc/<qtile_dir>/default_config.py ~/.config/qtile/config.py
 echo -e "#!/bin/sh\nexec qtile" >> ~/.xinitrc
 
+localectl set-x11-keymap latam deadtilde,dvorak
+
 git clone https://github.com/cylgom/ly.git
 (cd ly && make github && make && sudo make install)
 sudo systemctl enable ly.service
