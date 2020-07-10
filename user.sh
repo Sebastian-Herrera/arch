@@ -26,7 +26,7 @@ xdg-user-dirs-update
 #echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
 mkdir -p ~/.config/qtile/
-cp /usr/share/doc/<qtile_dir>/default_config.py ~/.config/qtile/config.py
+cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
 echo -e "#!/bin/sh\nexec qtile" >> ~/.xinitrc
 
 localectl set-x11-keymap latam deadtilde,dvorak
