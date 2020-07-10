@@ -12,7 +12,8 @@ yay -S --noconfirm nvidia-340xx nvidia-340xx-settings
 #nvidia-340xx-utils
 #opencl-nvidia-340xx
 sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
-sudo mkinitcpio -p linux 
+sudo mkinitcpio -p linux
+nvidia-xconfig
 
 yay -S --noconfirm xdg-user-dirs neofetch qtile alacritty google-chrome
 #zsh-theme-powerlevel10k-git 
