@@ -13,9 +13,9 @@ yay -S --noconfirm xdg-user-dirs zsh neofetch qtile alacritty
 
 xdg-user-dirs-update
 
+chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 source ~/.zshrc
-#chsh -s $(which zsh)
 #echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
 yay -S --noconfirm nvidia-340xx-lts nvidia-340xx-settings 
