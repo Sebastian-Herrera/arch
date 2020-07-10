@@ -15,7 +15,7 @@ xdg-user-dirs-update
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 source ~/.zshrc
 #chsh -s $(which zsh)
-echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+#echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
 yay -S nvidia-340xx nvidia-340xx-settings nvidia-340xx-utils opencl-nvidia-340xx
 
