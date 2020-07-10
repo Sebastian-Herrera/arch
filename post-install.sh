@@ -18,7 +18,7 @@ echo -e "127.0.0.0       localhost\n::1             localhost\n127.0.1.1       h
 
 echo "root:0" | chpasswd 
 
-useradd -m -G wheel herrera -c "Sebastian Herrera"
+useradd -m -G wheel -s /bin/zsh herrera -c "Sebastian Herrera"
 echo "herrera:0" | chpasswd
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 
