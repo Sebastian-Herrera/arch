@@ -10,7 +10,8 @@ reflector --sort rate -l 5 --save /etc/pacman.d/mirrorlist
 
 mount /dev/sda1 /mnt
 
-pacstrap /mnt base sudo binutils make gcc pkgconf fakeroot linux-lts linux-firmware intel-ucode neovim grub networkmanager xorg-server xorg-xinit mesa mesa-demos git
+#pacstrap /mnt base sudo binutils make gcc pkgconf fakeroot linux-lts linux-firmware intel-ucode neovim grub networkmanager xorg-server xorg-xinit mesa mesa-demos git
+pacstrap /mnt base base-devel linux-lts linux-firmware intel-ucode neovim grub networkmanager xorg-server xorg-xinit mesa mesa-demos git
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
