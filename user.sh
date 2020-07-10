@@ -20,4 +20,10 @@ echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.
 mkdir -p ~/.config/qtile/
 cp /usr/share/doc/<qtile_dir>/default_config.py ~/.config/qtile/config.py
 echo -e "#!/bin/sh\nexec qtile" >> ~/.xinitrc
+
+git clone https://github.com/cylgom/ly.git
+(cd ly && make github && make && sudo make install)
+sudo systemctl enable ly.service
+sudo systemctl disable getty@tty1.service
+
 startx
