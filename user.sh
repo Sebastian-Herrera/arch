@@ -15,5 +15,4 @@ xdg-user-dirs-update
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &&
 source ~/.zshrc &&
 chsh -s $(which zsh) &&
-
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc)
