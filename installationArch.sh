@@ -22,5 +22,6 @@ arch-chroot /mnt /root/post-install.sh
 cp -rfv ~/arch/user.sh /mnt/home/herrera/
 chmod 777 /mnt/home/herrera/user.sh
 
+rm -r ~/arch /root/post-install.sh
 umount -R /mnt
 reboot
