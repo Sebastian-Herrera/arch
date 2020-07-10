@@ -36,6 +36,6 @@ sudo systemctl enable ly.service
 sudo systemctl disable getty@tty1.service
 rm -rfv ly/
 
-rm ./user.sh
+rm ~/user.sh
 #startx
 reboot
