@@ -1,5 +1,5 @@
 #!/bin/bash
-mkfs.ext4 /dev/sda1
+mkfs.ext4 -F /dev/sda1
 mkswap /dev/sda2
 swapon /dev/sda2
 
