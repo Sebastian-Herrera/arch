@@ -21,11 +21,8 @@ source ~/.zshrc
 yay -S --noconfirm nvidia-340xx-lts nvidia-340xx-settings 
 #nvidia-340xx-utils
 #opencl-nvidia-340xx
-/etc/mkinitcpio.conf
-MODULES=()
-MODULES=(nvidia)
+sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
 sudo mkinitcpio -p linux
-
 
 mkdir -p ~/.config/qtile/
 cp /usr/share/doc/<qtile_dir>/default_config.py ~/.config/qtile/config.py
@@ -36,4 +33,5 @@ git clone https://github.com/cylgom/ly.git
 sudo systemctl enable ly.service
 sudo systemctl disable getty@tty1.service
 
-startx
+#startx
+reboot
