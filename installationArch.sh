@@ -14,13 +14,13 @@ pacstrap /mnt base sudo linux-lts linux-firmware intel-ucode neovim grub network
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-cp -rfv post-install.sh /mnt/root/
+cp -rfv ~/arch/post-install.sh /mnt/root/
 chmod 777 /mnt/root/post-install.sh
 
 arch-chroot /mnt /root/post-install.sh
 
-cp -rfv user.sh /mnt/root/
-chmod 777 /mnt/herrera/user.sh
+cp -rfv ~/arch/user.sh /mnt/home/herrera/
+chmod 777 /mnt/home/herrera/user.sh
 
 umount -R /mnt
 reboot
