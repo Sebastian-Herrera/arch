@@ -23,6 +23,7 @@ rm /mnt/root/post-install.sh
 cp -rfv ~/arch/user.sh /mnt/home/herrera/
 chmod 777 /mnt/home/herrera/user.sh
 
+> /mnt/home/herrera/.zshrc
 echo "sh ~/user.sh" >> /mnt/home/herrera/.zlogin
 
 umount -R /mnt
