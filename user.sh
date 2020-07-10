@@ -16,3 +16,10 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 source ~/.zshrc
 chsh -s $(which zsh)
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+
+mkdir -p ~/.config/qtile/
+cp /usr/share/doc/<qtile_dir>/default_config.py ~/.config/qtile/config.py
+nvim ~/.xinitrc
+#!/bin/sh
+    exec qtile
+startx
