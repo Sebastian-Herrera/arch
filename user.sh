@@ -38,5 +38,4 @@ rm -rfv ly/
 
 rm ./user.sh
 #startx
-#reboot
-exit
+reboot
