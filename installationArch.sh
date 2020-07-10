@@ -22,8 +22,8 @@ rm mnt/root/post-install.sh
 
 cp -rfv ~/arch/user.sh /mnt/home/herrera/
 chmod 777 /mnt/home/herrera/user.sh
-arch-chroot /mnt /home/herrera/user.sh - herrera
-rm mnt/home/herrera/user.sh
+#arch-chroot /mnt /home/herrera/user.sh - herrera
+#rm mnt/home/herrera/user.sh
 
-umount -R /mnt
-reboot
+#umount -R /mnt
+#reboot
