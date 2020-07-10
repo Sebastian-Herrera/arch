@@ -19,5 +19,8 @@ chmod 777 /mnt/root/post-install.sh
 
 arch-chroot /mnt /root/post-install.sh
 
+cp -rfv user.sh /mnt/root/
+chmod 777 /mnt/herrera/user.sh
+
 umount -R /mnt
 reboot
