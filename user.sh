@@ -21,6 +21,11 @@ source ~/.zshrc
 yay -S --noconfirm nvidia-340xx-lts nvidia-340xx-settings 
 #nvidia-340xx-utils
 #opencl-nvidia-340xx
+/etc/mkinitcpio.conf
+MODULES=()
+MODULES=(nvidia)
+sudo mkinitcpio -p linux
+
 
 mkdir -p ~/.config/qtile/
 cp /usr/share/doc/<qtile_dir>/default_config.py ~/.config/qtile/config.py
