@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "0" | sudo -S pacman -Syyu
+echo '0' | sudo -S pacman -Syyu
 
 echo 'Server = http://repo.archlinux.fr/$arch' | sudo tee -a /etc/pacman.conf
 sudo pacman -Sy
@@ -27,9 +27,11 @@ xdg-user-dirs-update
 
 mkdir -p ~/.config/qtile/
 cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
-echo -e "#!/bin/sh\nexec qtile" >> ~/.xinitrc
+echo -e '#!/bin/sh\nexec qtile' >> ~/.xinitrc
 
 localectl set-x11-keymap latam deadtilde,dvorak
+
+echo -e 'defaults.pcm.card 2\ndefaults.ctl.card 2' | sudo tee -a /etc/asound.conf
 
 git clone https://github.com/cylgom/ly.git
 (cd ly && make github && make && sudo make install)
