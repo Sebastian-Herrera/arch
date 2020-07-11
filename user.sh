@@ -44,11 +44,11 @@ rm -rfv ly/
 pactl set-default-sink 'alsa_output.usb-Focusrite_Scarlett_6i6_USB_00011521-00.analog-surround-51'
 pactl set-default-source 'alsa_input.usb-Focusrite_Scarlett_6i6_USB_00011521-00.multichannel-input'
 
-sudo mkdir -p /opt/telegram/Telegram/
-sudo ln -s /opt/telegram/Telegram/Telegram /usr/bin/telegram
+#sudo mkdir -p /opt/telegram/Telegram/
+#sudo ln -s /opt/telegram/Telegram/Telegram /usr/bin/telegram
 
 
-
+echo '' | sudo tee ~/.zlogin
 rm ~/user.sh
 #startx
 reboot
