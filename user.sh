@@ -44,6 +44,9 @@ rm -rfv ly/
 sudo mkdir -p /opt/telegram/Telegram/
 sudo ln -s /opt/telegram/Telegram/Telegram /usr/bin/telegram
 
+pactl set-default-source 'alsa_input.usb-Focusrite_Scarlett_6i6_USB_00011521-00.multichannel-input'
+pactl set-default-sink 'alsa_output.usb-Focusrite_Scarlett_6i6_USB_00011521-00.analog-surround-51'
+
 
 
 rm ~/user.sh
