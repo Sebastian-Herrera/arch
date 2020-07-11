@@ -39,6 +39,13 @@ sudo systemctl enable ly.service
 sudo systemctl disable getty@tty1.service
 rm -rfv ly/
 
+
+
+sudo mkdir -p /opt/telegram/Telegram/
+sudo ln -s /opt/telegram/Telegram/Telegram /usr/bin/telegram
+
+
+
 rm ~/user.sh
 #startx
 reboot
