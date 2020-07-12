@@ -39,14 +39,12 @@ sudo systemctl enable ly.service
 sudo systemctl disable getty@tty1.service
 rm -rfv ly/
 
-
-
 pactl set-default-sink 'alsa_output.usb-Focusrite_Scarlett_6i6_USB_00011521-00.analog-surround-51'
 pactl set-default-source 'alsa_input.usb-Focusrite_Scarlett_6i6_USB_00011521-00.multichannel-input'
 
+curl https://api.github.com/repos/telegramdesktop/tdesktop/releases/latest
 #sudo mkdir -p /opt/telegram/Telegram/
 #sudo ln -s /opt/telegram/Telegram/Telegram /usr/bin/telegram
-
 
 echo '' | sudo tee ~/.zlogin
 rm ~/user.sh
