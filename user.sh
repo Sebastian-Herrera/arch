@@ -42,7 +42,8 @@ rm -rfv ly/
 pactl set-default-sink 'alsa_output.usb-Focusrite_Scarlett_6i6_USB_00011521-00.analog-surround-51'
 pactl set-default-source 'alsa_input.usb-Focusrite_Scarlett_6i6_USB_00011521-00.multichannel-input'
 
-curl https://api.github.com/repos/telegramdesktop/tdesktop/releases/latest | grep "h.*p\..*tar\.xz"
+TELEGRAM_URL=$(curl -s https://api.github.com/repos/telegramdesktop/tdesktop/releases/latest | grep "h.*p\..*tar\.xz" | cut -d '"' -f 4)
+curl -O $TELEGRAM_URL
 #sudo mkdir -p /opt/telegram/Telegram/
 #sudo ln -s /opt/telegram/Telegram/Telegram /usr/bin/telegram
 
