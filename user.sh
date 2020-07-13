@@ -44,7 +44,8 @@ pactl set-default-source 'alsa_input.usb-Focusrite_Scarlett_6i6_USB_00011521-00.
 
 TELEGRAM_URL=$(curl -s https://api.github.com/repos/telegramdesktop/tdesktop/releases/latest | grep "h.*p\..*tar\.xz" | cut -d '"' -f 4)
 curl -LJo tsetup.tar.xz $TELEGRAM_URL
-tar -xvf tsetup.tar.xz -C /opt/telegram/
+sudo mkdir -p /opt/telegram/
+sudo tar -xvf tsetup.tar.xz -C /opt/telegram/
 rm -rfv tsetup.tar.xz
 #sudo mkdir -p /opt/telegram/Telegram/
 sudo ln -s /opt/telegram/Telegram/Telegram /usr/bin/telegram
