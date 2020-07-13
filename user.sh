@@ -15,15 +15,14 @@ sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
 sudo mkinitcpio -p linux
 nvidia-xconfig
 
-yay -S --noconfirm xdg-user-dirs neofetch qtile alacritty google-chrome
-#zsh-theme-powerlevel10k-git 
+yay -S --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git qtile alacritty google-chrome 
 
 xdg-user-dirs-update
 
 #chsh -s $(which zsh)
-#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-#source ~/.zshrc
-#echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+source ~/.zshrc
+echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
 mkdir -p ~/.config/qtile/
 cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
