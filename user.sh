@@ -46,9 +46,8 @@ TELEGRAM_URL=$(curl -s https://api.github.com/repos/telegramdesktop/tdesktop/rel
 curl -LJo tsetup.tar.xz $TELEGRAM_URL
 sudo mkdir -p /opt/telegram/
 sudo tar -xvf tsetup.tar.xz -C /opt/telegram/
-rm -rfv tsetup.tar.xz
-#sudo mkdir -p /opt/telegram/Telegram/
 sudo ln -s /opt/telegram/Telegram/Telegram /usr/bin/telegram
+rm -rfv tsetup.tar.xz
 
 echo '' | sudo tee ~/.zlogin
 rm ~/user.sh
