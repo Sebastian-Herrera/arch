@@ -15,7 +15,7 @@ sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
 sudo mkinitcpio -p linux
 nvidia-xconfig
 
-yay -S --noconfirm systemd-numlockontty xdg-user-dirs neofetch zsh-theme-powerlevel10k-git qtile alacritty google-chrome 
+yay -S --noconfirm systemd-numlockontty xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtile alacritty google-chrome 
 
 systemctl enable numLockOnTty
 
