@@ -3,7 +3,7 @@ timedatectl set-ntp true
 ln -sf /usr/share/zoneinfo/America/Bogota /etc/localtime
 hwclock --systohc
 
-sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+sed -i '/#en_US.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
 locale-gen
 
 sed -i "/week 7/a\first_weekday 2\\nfirst_workday 2" /usr/share/i18n/locales/en_US
