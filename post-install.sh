@@ -9,10 +9,10 @@ locale-gen
 sed -i "/week 7/a\first_weekday 2\\nfirst_workday 2" /usr/share/i18n/locales/en_US
 locale-gen
 
-echo "LANG=en-US.UTF-8" >> /etc/locale.conf
-echo "KEYMAP=es" >> /etc/vconsole.conf
+echo "LANG=en-US.UTF-8" > /etc/locale.conf
+echo "KEYMAP=es" > /etc/vconsole.conf
 
-echo "herrera" >> /etc/hostname
+echo "herrera" > /etc/hostname
 
 echo -e "127.0.0.0       localhost\n::1             localhost\n127.0.1.1       herrera.localdomain     herrera" >> /etc/hosts
 
