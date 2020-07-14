@@ -34,6 +34,8 @@ localectl set-x11-keymap latam deadtilde,dvorak
 
 echo -e 'defaults.pcm.card 2\ndefaults.ctl.card 2' | sudo tee -a /etc/asound.conf
 
+echo -e "[Settings]\ngtk-application-prefer-dark-theme=1" > .config/gtk-3.0/settings.ini
+
 git clone https://github.com/cylgom/ly.git
 (cd ly && make github && make && sudo make install)
 sudo systemctl enable ly.service
