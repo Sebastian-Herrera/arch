@@ -17,6 +17,8 @@ nvidia-xconfig
 
 yay -S --noconfirm systemd-numlockontty xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtile alacritty rofi nautilus google-chrome visual-studio-code-bin
 
+#localectl set-locale LANG=en_US.UTF-8
+
 systemctl enable numLockOnTty
 
 xdg-user-dirs-update
