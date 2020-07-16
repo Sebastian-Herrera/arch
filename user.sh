@@ -38,11 +38,11 @@ echo -e 'defaults.pcm.card 2\ndefaults.ctl.card 2' | sudo tee -a /etc/asound.con
 
 echo -e "[Settings]\ngtk-application-prefer-dark-theme=1" > .config/gtk-3.0/settings.ini
 
-git clone https://github.com/cylgom/ly.git
-(cd ly && make github && make && sudo make install)
-sudo systemctl enable ly.service
-sudo systemctl disable getty@tty1.service
-rm -rfv ly/
+#git clone https://github.com/cylgom/ly.git
+#(cd ly && make github && make && sudo make install)
+#sudo systemctl enable ly.service
+#sudo systemctl disable getty@tty1.service
+#rm -rfv ly/
 
 pactl set-default-sink 'alsa_output.usb-Focusrite_Scarlett_6i6_USB_00011521-00.analog-surround-51'
 pactl set-default-source 'alsa_input.usb-Focusrite_Scarlett_6i6_USB_00011521-00.multichannel-input'
