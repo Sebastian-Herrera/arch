@@ -17,7 +17,8 @@ nvidia-xconfig
 
 #localectl set-locale LANG=en_US.UTF-8
 
-yay -S --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtile alacritty rofi perl-file-mimeinfo nautilus noto-fonts-emoji google-chrome visual-studio-code-bin
+yay -S --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtile alacritty perl-file-mimeinfo nautilus noto-fonts-emoji google-chrome visual-studio-code-bin
+#rofi
 #systemd-numlockontty
 #systemctl enable numLockOnTty
 
