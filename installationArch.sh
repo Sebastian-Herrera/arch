@@ -28,6 +28,7 @@ chmod 777 /mnt/home/herrera/user.sh
 > /mnt/home/herrera/.zshrc
 echo "sh ~/user.sh" >> /mnt/home/herrera/.zlogin
 
+mkdir /mnt/etc/fonts/ 
 mv ~/arch/local.conf /mnt/etc/fonts/
 
 umount -R /mnt
