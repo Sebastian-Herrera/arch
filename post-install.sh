@@ -1,4 +1,6 @@
 #!/bin/sh
+set -euo pipefail
+
 timedatectl set-ntp true
 ln -sf /usr/share/zoneinfo/America/Bogota /etc/localtime
 hwclock --systohc
