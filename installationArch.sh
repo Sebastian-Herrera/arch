@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/sh
+set -euo pipefail
+
 mkfs.ext4 -F /dev/sda1
 mkswap /dev/sda2
 swapon /dev/sda2
