@@ -10,7 +10,7 @@ git clone https://aur.archlinux.org/yay.git
 (cd yay && makepkg -si --noconfirm)
 rm -rfv yay/
 
-yay -S --noconfirm nvidia-340xx nvidia-340xx-settings 
+yay -S --noconfirm nvidia-340xx-lts nvidia-340xx-settings 
 #nvidia-340xx-utils
 #opencl-nvidia-340xx
 sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
