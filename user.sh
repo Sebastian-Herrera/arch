@@ -55,7 +55,9 @@ rm -rfv tsetup.tar.xz
 #rm -rfv ly/
 
 yay -S --noconfirm lightdm lightdm-webkit2-greeter
+perl -pi -e 's/(?<=#greeter-session=).*/lightdm-webkit2-greeter/g' ./lightdm.conf
 (cd /usr/share/lightdm-webkit/themes/ && sudo git clone https://github.com/davidmogar/lightdm-webkit2-dmg_blue.git)
+echo 'Server = http://repo.archlinux.fr/$arch' | sudo tee -a /etc/lightdm/lightdm-webkit2-greeter.conf
 
 echo '' | sudo tee ~/.zlogin
 rm ~/user.sh
