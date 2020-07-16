@@ -20,7 +20,7 @@ echo "root:0" | chpasswd
 
 useradd -m -G wheel -s /bin/zsh herrera -c "Sebastian Herrera"
 echo "herrera:0" | chpasswd
-sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+sed -i '/# %wheel ALL=(ALL) ALL/s/^# //g' /etc/sudoers
 
 systemctl enable NetworkManager
 
