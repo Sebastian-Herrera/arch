@@ -15,11 +15,11 @@ sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
 sudo mkinitcpio -p linux
 nvidia-xconfig
 
-yay -S --noconfirm systemd-numlockontty xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtile alacritty rofi nautilus noto-fonts-emoji google-chrome visual-studio-code-bin
-
 #localectl set-locale LANG=en_US.UTF-8
 
-systemctl enable numLockOnTty
+yay -S --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtile alacritty rofi perl-file-mimeinfo nautilus noto-fonts-emoji google-chrome visual-studio-code-bin
+#systemd-numlockontty
+#systemctl enable numLockOnTty
 
 xdg-user-dirs-update
 
