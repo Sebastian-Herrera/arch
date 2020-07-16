@@ -38,12 +38,6 @@ echo -e 'defaults.pcm.card 2\ndefaults.ctl.card 2' | sudo tee -a /etc/asound.con
 
 echo -e "[Settings]\ngtk-application-prefer-dark-theme=1" > .config/gtk-3.0/settings.ini
 
-#git clone https://github.com/cylgom/ly.git
-#(cd ly && make github && make && sudo make install)
-#sudo systemctl enable ly.service
-#sudo systemctl disable getty@tty1.service
-#rm -rfv ly/
-
 pactl set-default-sink 'alsa_output.usb-Focusrite_Scarlett_6i6_USB_00011521-00.analog-surround-51'
 pactl set-default-source 'alsa_input.usb-Focusrite_Scarlett_6i6_USB_00011521-00.multichannel-input'
 
@@ -53,6 +47,15 @@ sudo mkdir -p /opt/telegram/
 sudo tar -xvf tsetup.tar.xz -C /opt/telegram/
 sudo ln -s /opt/telegram/Telegram/Telegram /usr/bin/telegram
 rm -rfv tsetup.tar.xz
+
+#git clone https://github.com/cylgom/ly.git
+#(cd ly && make github && make && sudo make install)
+#sudo systemctl enable ly.service
+#sudo systemctl disable getty@tty1.service
+#rm -rfv ly/
+
+yay -S --noconfirm lightdm lightdm-webkit2-greeter
+(cd /usr/share/lightdm-webkit/themes/ && sudo git clone https://github.com/davidmogar/lightdm-webkit2-dmg_blue.git)
 
 echo '' | sudo tee ~/.zlogin
 rm ~/user.sh
