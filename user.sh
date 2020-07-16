@@ -1,4 +1,6 @@
 #!/bin/sh
+set -euo pipefail
+
 echo '0' | sudo -S pacman -Syyu
 
 echo 'Server = http://repo.archlinux.fr/$arch' | sudo tee -a /etc/pacman.conf
