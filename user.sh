@@ -10,6 +10,9 @@ git clone https://aur.archlinux.org/yay.git
 (cd yay && makepkg -si --noconfirm)
 rm -rfv yay/
 
+sudo sed -i 's/sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"//' ./user.sh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 yay -S --noconfirm nvidia-340xx
 #nvidia-340xx-settings 
 #nvidia-340xx-utils
@@ -27,7 +30,7 @@ yay -S --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtil
 xdg-user-dirs-update
 
 #chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 #source ~/.zshrc
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
