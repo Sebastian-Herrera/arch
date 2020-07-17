@@ -10,13 +10,6 @@ git clone https://aur.archlinux.org/yay.git
 (cd yay && makepkg -si --noconfirm)
 rm -rfv yay/
 
-yay -S --noconfirm nvidia-340xx-lts nvidia-340xx-settings 
-#nvidia-340xx-utils
-#opencl-nvidia-340xx
-sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
-sudo mkinitcpio -p linux
-nvidia-xconfig
-
 #localectl set-locale LANG=en_US.UTF-8
 
 yay -S --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtile alacritty perl-file-mimeinfo nautilus noto-fonts-emoji google-chrome visual-studio-code-bin
@@ -63,7 +56,14 @@ sudo sed -i '/#greeter-ses/s/^#//g' /etc/lightdm/lightdm.conf
 (cd /usr/share/lightdm-webkit/themes/ && sudo git clone https://github.com/davidmogar/lightdm-webkit2-dmg_blue.git)
 sudo sed -i 's/antergos/lightdm-webkit2-dmg_blue/' /etc/lightdm/lightdm-webkit2-greeter.conf
 
+#yay -S --noconfirm nvidia-340xx-lts nvidia-340xx-settings 
+#nvidia-340xx-utils
+#opencl-nvidia-340xx
+#sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
+#sudo mkinitcpio -p linux-lts
+#nvidia-xconfig
+
 echo '' | sudo tee ~/.zlogin
-rm ~/user.sh
+#rm ~/user.sh
 #startx
 reboot
