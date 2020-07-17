@@ -61,8 +61,8 @@ sudo systemctl enable lightdm.service
 #nvidia-340xx-utils
 #opencl-nvidia-340xx
 #sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
-#sudo mkinitcpio -p linux-lts
-#nvidia-xconfig
+#sudo mkinitcpio -p linux
+#sudo nvidia-xconfig
 
 echo '' | sudo tee ~/.zlogin
 #rm ~/user.sh
