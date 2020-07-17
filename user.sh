@@ -10,10 +10,17 @@ git clone https://aur.archlinux.org/yay.git
 (cd yay && makepkg -si --noconfirm)
 rm -rfv yay/
 
-#localectl set-locale LANG=en_US.UTF-8
+yay -S --noconfirm nvidia-340xx
+#nvidia-340xx-settings 
+#nvidia-340xx-utils
+#opencl-nvidia-340xx
+sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
+sudo mkinitcpio -p linux
+sudo nvidia-xconfig
 
-yay -S --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtile alacritty perl-file-mimeinfo nautilus noto-fonts-emoji google-chrome visual-studio-code-bin
-#rofi
+yay -S --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtile alacritty perl-file-mimeinfo nautilus noto-fonts-emoji 
+#google-chrome visual-studio-code-bin
+#rofi #localectl set-locale LANG=en_US.UTF-8
 #systemd-numlockontty
 #systemctl enable numLockOnTty
 
@@ -57,14 +64,7 @@ sudo sed -i '/#greeter-ses/s/^#//g' /etc/lightdm/lightdm.conf
 sudo sed -i 's/antergos/lightdm-webkit2-dmg_blue/' /etc/lightdm/lightdm-webkit2-greeter.conf
 sudo systemctl enable lightdm.service
 
-#yay -S --noconfirm nvidia-340xx nvidia-340xx-settings 
-#nvidia-340xx-utils
-#opencl-nvidia-340xx
-#sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
-#sudo mkinitcpio -p linux
-#sudo nvidia-xconfig
-
 echo '' | sudo tee ~/.zlogin
-#rm ~/user.sh
+rm ~/user.sh
 #startx
 reboot
