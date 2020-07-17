@@ -27,9 +27,9 @@ yay -S --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtil
 xdg-user-dirs-update
 
 #chsh -s $(which zsh)
-#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 #source ~/.zshrc
-#echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
 mkdir -p ~/.config/qtile/
 cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
