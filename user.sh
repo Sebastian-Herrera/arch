@@ -28,7 +28,7 @@ mkdir -p ~/.config/qtile/
 cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
 echo -e '#!/bin/sh\nexec qtile' > ~/.xinitrc
 
-localectl set-x11-keymap latam deadtilde,dvorak
+#localectl set-x11-keymap latam deadtilde,dvorak
 
 echo -e 'defaults.pcm.card 2\ndefaults.ctl.card 2' | sudo tee -a /etc/asound.conf
 
