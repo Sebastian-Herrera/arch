@@ -32,6 +32,7 @@ localectl set-x11-keymap latam deadtilde,dvorak
 
 echo -e 'defaults.pcm.card 2\ndefaults.ctl.card 2' | sudo tee -a /etc/asound.conf
 
+mkdir .config/gtk-3.0/
 echo -e "[Settings]\ngtk-application-prefer-dark-theme=1" > .config/gtk-3.0/settings.ini
 
 #pactl set-default-sink 'alsa_output.usb-Focusrite_Scarlett_6i6_USB_00011521-00.analog-surround-51'
