@@ -56,6 +56,7 @@ sudo perl -pi -e 's/(?<=#greeter-session=).*/lightdm-webkit2-greeter/g' /etc/lig
 sudo sed -i '/#greeter-ses/s/^#//g' /etc/lightdm/lightdm.conf
 (cd /usr/share/lightdm-webkit/themes/ && sudo git clone https://github.com/davidmogar/lightdm-webkit2-dmg_blue.git)
 sudo sed -i 's/antergos/lightdm-webkit2-dmg_blue/' /etc/lightdm/lightdm-webkit2-greeter.conf
+sudo systemctl enable lightdm.service
 
 #yay -S --noconfirm nvidia-340xx-lts nvidia-340xx-settings 
 #nvidia-340xx-utils
