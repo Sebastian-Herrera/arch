@@ -3,7 +3,7 @@ set -euo pipefail
 
 echo '0' | sudo -S pacman -Syyu
 
-sudo sed -i 's/sh -c.*/#/' ./user.sh
+sudo sed -i 's/sh -c.*"/#/' ./user.sh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo 'Server = http://repo.archlinux.fr/$arch' | sudo tee -a /etc/pacman.conf
