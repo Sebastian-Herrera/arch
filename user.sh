@@ -26,7 +26,7 @@ xdg-user-dirs-update
 
 mkdir -p ~/.config/qtile/
 cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
-echo -e '#!/bin/sh\nexec qtile' >> ~/.xinitrc
+echo -e '#!/bin/sh\nexec qtile' > ~/.xinitrc
 
 localectl set-x11-keymap latam deadtilde,dvorak
 
