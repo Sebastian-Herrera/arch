@@ -3,15 +3,15 @@ set -euo pipefail
 
 echo '0' | sudo -S pacman -Syyu
 
+sudo sed -i 's/sh -c.*/#/' ./user.sh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 echo 'Server = http://repo.archlinux.fr/$arch' | sudo tee -a /etc/pacman.conf
 sudo pacman -Sy
 
 git clone https://aur.archlinux.org/yay.git
 (cd yay && makepkg -si --noconfirm)
 rm -rfv yay/
-
-sudo sed -i 's/sh -c.*/#/' ./user.sh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 yay -S --noconfirm nvidia-340xx
 #nvidia-340xx-settings 
