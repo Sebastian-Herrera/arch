@@ -52,7 +52,7 @@ rm -rfv tsetup.tar.xz
 #rm -rfv ly/
 
 yay -S --noconfirm lightdm lightdm-webkit2-greeter
-sudo perl -pi -e 's/(?<=#greeter-session=).*/lightdm-webkit2-greeter/g' ./lightdm.conf
+sudo perl -pi -e 's/(?<=#greeter-session=).*/lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 sudo sed -i '/#greeter-ses/s/^#//g' /etc/lightdm/lightdm.conf
 (cd /usr/share/lightdm-webkit/themes/ && sudo git clone https://github.com/davidmogar/lightdm-webkit2-dmg_blue.git)
 sudo sed -i 's/antergos/lightdm-webkit2-dmg_blue/' /etc/lightdm/lightdm-webkit2-greeter.conf
