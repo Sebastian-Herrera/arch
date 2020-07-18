@@ -1,0 +1,2 @@
+set-default-sink alsa_output.usb-Focusrite_Scarlett_6i6_USB_00011521-00.analog-surround-21
+set-default-source alsa_input.usb-Focusrite_Scarlett_6i6_USB_00011521-00.multichannel-input
