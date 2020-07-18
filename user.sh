@@ -13,7 +13,7 @@ git clone https://aur.archlinux.org/yay.git
 (cd yay && makepkg -si --noconfirm)
 rm -rfv yay/
 
-yay -Sy --noconfirm nvidia-340xx
+yay -Sy --noconfirm xorg-server xorg-xinit mesa mesa-demos nvidia-340xx
 #nvidia-340xx-settings 
 #nvidia-340xx-utils
 #opencl-nvidia-340xx
@@ -21,7 +21,7 @@ sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
 sudo mkinitcpio -p linux
 sudo nvidia-xconfig
 
-yay -Sy --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git noto-fonts-emoji qtile alacritty perl-file-mimeinfo nautilus unzip google-chrome visual-studio-code-bin
+yay -Sy --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git noto-fonts-emoji unzip qtile alacritty perl-file-mimeinfo nautilus pulseaudio google-chrome visual-studio-code-bin
 #rofi #localectl set-locale LANG=en_US.UTF-8
 #systemd-numlockontty
 #systemctl enable numLockOnTty
