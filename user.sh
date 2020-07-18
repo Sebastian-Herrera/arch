@@ -13,7 +13,7 @@ git clone https://aur.archlinux.org/yay.git
 (cd yay && makepkg -si --noconfirm)
 rm -rfv yay/
 
-yay -S --noconfirm nvidia-340xx
+yay -Sy --noconfirm nvidia-340xx
 #nvidia-340xx-settings 
 #nvidia-340xx-utils
 #opencl-nvidia-340xx
@@ -21,7 +21,7 @@ sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
 sudo mkinitcpio -p linux
 sudo nvidia-xconfig
 
-yay -S --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtile alacritty perl-file-mimeinfo nautilus noto-fonts-emoji google-chrome visual-studio-code-bin
+yay -Sy --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git unzip qtile alacritty perl-file-mimeinfo nautilus noto-fonts-emoji google-chrome visual-studio-code-bin
 #rofi #localectl set-locale LANG=en_US.UTF-8
 #systemd-numlockontty
 #systemctl enable numLockOnTty
@@ -61,7 +61,7 @@ rm -rfv tsetup.tar.xz
 #sudo systemctl disable getty@tty1.service
 #rm -rfv ly/
 
-yay -S --noconfirm lightdm lightdm-webkit2-greeter
+yay -Sy --noconfirm lightdm lightdm-webkit2-greeter
 sudo perl -pi -e 's/(?<=#greeter-session=).*/lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 sudo sed -i '/#greeter-ses/s/^#//g' /etc/lightdm/lightdm.conf
 (cd /usr/share/lightdm-webkit/themes/ && sudo git clone https://github.com/davidmogar/lightdm-webkit2-dmg_blue.git)
