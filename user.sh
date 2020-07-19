@@ -1,6 +1,7 @@
 #!/bin/sh
 set -euo pipefail
 
+chown -Rv herrera:herrera ~/
 echo '0' | sudo -S pacman -Syyu
 
 sudo sed -i 's/sh -c.*"/#/' ./user.sh
