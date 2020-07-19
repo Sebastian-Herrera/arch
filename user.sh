@@ -37,7 +37,7 @@ mkdir -p ~/.config/qtile/
 cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
 echo -e '#!/bin/sh\nexec qtile' > ~/.xinitrc
 
-localectl set-x11-keymap es
+echo "0" | sudo -S localectl set-x11-keymap es
 
 #echo -e 'defaults.pcm.card 2\ndefaults.ctl.card 2' | sudo tee -a /etc/asound.conf
 #pactl set-default-sink 'alsa_output.usb-Focusrite_Scarlett_6i6_USB_00011521-00.analog-surround-51'
