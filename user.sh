@@ -73,6 +73,6 @@ sudo sed -i 's/antergos/lightdm-webkit2-dmg_blue/' /etc/lightdm/lightdm-webkit2-
 sudo systemctl enable lightdm.service
 
 echo '' | sudo tee ~/.zlogin
-rm -f ~/.zshrc.pre-oh-my-zsh ~/user.sh
+rm -fv ~/.zshrc.pre-oh-my-zsh ~/user.sh
 #startx
 reboot
