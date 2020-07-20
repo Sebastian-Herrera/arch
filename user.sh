@@ -22,7 +22,8 @@ sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
 sudo mkinitcpio -p linux
 sudo nvidia-xconfig
 
-yay -Sy --noconfirm xdg-user-dirs neofetch zsh-theme-powerlevel10k-git noto-fonts-emoji unzip qtile alacritty perl-file-mimeinfo nautilus pulseaudio google-chrome visual-studio-code-bin
+echo '0' | sudo pacman -Sy --noconfirm xdg-user-dirs neofetch noto-fonts-emoji unzip qtile alacritty perl-file-mimeinfo nautilus pulseaudio
+yay -Sy --noconfirm zsh-theme-powerlevel10k-git google-chrome visual-studio-code-bin
 #rofi #localectl set-locale LANG=en_US.UTF-8
 #systemd-numlockontty
 #systemctl enable numLockOnTty
