@@ -4,9 +4,6 @@ set -euo pipefail
 echo '0' | sudo -S chown -Rv herrera:herrera ~/
 echo '0' | sudo -S pacman -Syyu
 
-sudo sed -i 's/sh -c.*"/#/' ./user.sh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 echo 'Server = http://repo.archlinux.fr/$arch' && sudo tee -a /etc/pacman.conf
 sudo pacman -Sy
 
@@ -30,10 +27,13 @@ yay -Sy --noconfirm zsh-theme-powerlevel10k-git google-chrome visual-studio-code
 
 xdg-user-dirs-update
 
-#chsh -s $(which zsh)
-#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-#source ~/.zshrc
-echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+if [ -d ~/.oh-my-zsh/ ]
+then
+        echo "..."
+else
+        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+fi
 
 #mkdir -p ~/.config/qtile/
 #cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
