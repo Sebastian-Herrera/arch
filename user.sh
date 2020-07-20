@@ -47,6 +47,7 @@ echo "0" | sudo -S localectl set-x11-keymap es
 
 curl -L -o myosevka.zip https://www.dropbox.com/sh/nqyurzy8wcupkkz/myosevka.zip\?dl\=1 | sudo unzip myosevka.zip -d /usr/share/fonts/ | rm myosevka.zip
 curl -LJo Open_Sans.zip https://fonts.google.com/download\?family\=Open%20Sans | sudo unzip Open_Sans.zip -d /usr/share/fonts/open-sans/ | rm Open_Sans.zip
+curl -LJo sf-ui-display-cufonfonts.zip https://www.cufonfonts.com/download/font/sf-ui-display | sudo unzip sf-ui-display-cufonfonts.zip -d /usr/share/fonts/sf-ui-display/ | rm sf-ui-display-cufonfonts.zip
 
 #mkdir .config/gtk-3.0/
 #echo -e "[Settings]\ngtk-application-prefer-dark-theme=1" > .config/gtk-3.0/settings.ini
