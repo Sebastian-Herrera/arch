@@ -23,7 +23,7 @@ sudo mkinitcpio -p linux
 #sudo nvidia-xconfig
 
 echo '0' | sudo pacman -Sy --noconfirm xdg-user-dirs neofetch noto-fonts-emoji unzip qtile gtk2 gtk3 alacritty perl-file-mimeinfo nautilus pulseaudio
-yay -Sy --noconfirm zsh-theme-powerlevel10k-git google-chrome visual-studio-code-bin spotify
+yay -Sy --noconfirm zsh-theme-powerlevel10k-git google-chrome visual-studio-code-bin
 #rofi #localectl set-locale LANG=en_US.UTF-8
 #systemd-numlockontty
 #systemctl enable numLockOnTty
