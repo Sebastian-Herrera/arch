@@ -52,7 +52,19 @@ keys = [
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
     Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
-    Key([mod], "Return", lazy.spawn("alacritty")),
+    
+    # ------------ App Configs ------------
+
+    # Menu
+    Key([mod], "Return", lazy.spawn("rofi -show run")),
+    # Window Nav
+    Key([mod, "shift"], "Return", lazy.spawn("rofi -show")),
+    # File Explorer
+    Key([mod], "f", lazy.spawn("nautilus")),
+    # Terminal
+    Key([mod], "t", lazy.spawn("alacritty")),
+    # Browser
+    Key([mod], "b", lazy.spawn("google-chrome-stable")),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
@@ -63,18 +75,15 @@ keys = [
     Key([mod], "r", lazy.spawncmd()),
 ]
 
-groups = [Group(i) for i in "asdfuiop"]
+groups = [Group(i) for i in ["   ", "   ", "   ", "   ", "   ", "   ","   "]]
 
-for i in groups:
+for i, group in enumerate(groups):
+    actual_key = str(i + 1)
     keys.extend([
-        # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen()),
-
-        # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True)),
-        # Or, use below if you prefer not to switch to that group.
-        # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
+        # Switch to workspace N
+        Key([mod], actual_key, lazy.group[group.name].toscreen()),
+        # Send window to workspace N
+        Key([mod, "shift"], actual_key, lazy.window.togroup(group.name))
     ])
 
 layouts = [
