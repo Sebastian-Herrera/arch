@@ -75,29 +75,15 @@ keys = [
     Key([mod], "b", lazy.spawn("google-chrome-stable")),
     Key([], "XF86Mail", lazy.spawn("google-chrome-stable https://hotmail.com")),
     # Spotify
-    # Key([], "XF86Tools", lazy.spawn(
-    #     ""
-    # )),
+    Key([], "XF86Tools", lazy.spawn("gtk-launch spotify.desktop")),
 
     # === Hardware Configs === #
-    Key([], "XF86AudioLowerVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ -5%"
-    )),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ +5%"
-    )),
-    Key([], "XF86AudioMute", lazy.spawn(
-        "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-    )),
-    # Key([], "XF86AudioPlay", lazy.spawn(
-    #     ""
-    # )),
-    # Key([], "XF86AudioPrev", lazy.spawn(
-    #     ""
-    # )),
-    # Key([], "XF86AudioNext", lazy.spawn(
-    #     ""
-    # )),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")),
+    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+    Key([], "XF86AudioPlay", lazy.spawn("omnipause toggle")),
+    Key([], "XF86AudioPrev", lazy.spawn("omnipause previous")),
+    Key([], "XF86AudioNext", lazy.spawn("omnipause next")),
 ]
 
 groups = [Group(i) for i in ["   ", "   ", "   ", "   ", "   ", "   ", "   "]]
