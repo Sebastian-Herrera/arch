@@ -33,57 +33,82 @@ from typing import List  # noqa: F401
 mod = "mod4"
 
 keys = [
+    # === Qtile === #
     # Switch between windows in current stack pane
-    Key([mod], "k", lazy.layout.down()),
-    Key([mod], "j", lazy.layout.up()),
-
+    Key([mod], "Down", lazy.layout.down()),
+    Key([mod], "Up", lazy.layout.up()),
+    Key([mod], "Left", lazy.layout.left()),
+    Key([mod], "Right", lazy.layout.right()),
+    # Change window sizes (MonadTall)
+    Key([mod, "shift"], "Left", lazy.layout.shrink()),
+    Key([mod, "shift"], "Right", lazy.layout.grow()),
+    # Toggle floating
+    Key([mod, "shift"], "f", lazy.window.toggle_floating()),
     # Move windows up or down in current stack
-    Key([mod, "control"], "k", lazy.layout.shuffle_down()),
-    Key([mod, "control"], "j", lazy.layout.shuffle_up()),
-
+    Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
+    Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
+    # Toggle between different layouts as defined below
+    Key([mod], "Tab", lazy.next_layout()),
+    # Kill window
+    Key([mod], "q", lazy.window.kill()),
+    Key([], "Cancel", lazy.window.kill()),
+    # Restart Qtile
+    Key([mod, "control"], "r", lazy.restart()),
+    Key([mod, "control"], "q", lazy.shutdown()),
+    # Key([mod], "r", lazy.spawncmd()),
     # Switch window focus to other pane(s) of stack
     Key([mod], "space", lazy.layout.next()),
-
     # Swap panes of split stack
     Key([mod, "shift"], "space", lazy.layout.rotate()),
 
-    # Toggle between split and unsplit sides of stack.
-    # Split = all windows displayed
-    # Unsplit = 1 window displayed, like Max layout, but still with
-    # multiple stack panes
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
-    
-    # ------------ App Configs ------------
-
+    # === Applications === #
     # Menu
     Key([mod], "Return", lazy.spawn("rofi -show run")),
     # Window Nav
     Key([mod, "shift"], "Return", lazy.spawn("rofi -show")),
     # File Explorer
     Key([mod], "f", lazy.spawn("nautilus")),
+    Key([], "XF86HomePage", lazy.spawn("nautilus")),
     # Terminal
     Key([mod], "t", lazy.spawn("alacritty")),
     # Browser
     Key([mod], "b", lazy.spawn("google-chrome-stable")),
+    Key([], "XF86Mail", lazy.spawn("google-chrome-stable https://hotmail.com")),
+    # Spotify
+    # Key([], "XF86Tools", lazy.spawn(
+    #     ""
+    # )),
 
-    # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout()),
-    Key([mod], "w", lazy.window.kill()),
-
-    Key([mod, "control"], "r", lazy.restart()),
-    Key([mod, "control"], "q", lazy.shutdown()),
-    Key([mod], "r", lazy.spawncmd()),
+    # === Hardware Configs === #
+    Key([], "XF86AudioLowerVolume", lazy.spawn(
+        "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+    )),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn(
+        "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+    )),
+    Key([], "XF86AudioMute", lazy.spawn(
+        "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    )),
+    # Key([], "XF86AudioPlay", lazy.spawn(
+    #     ""
+    # )),
+    # Key([], "XF86AudioPrev", lazy.spawn(
+    #     ""
+    # )),
+    # Key([], "XF86AudioNext", lazy.spawn(
+    #     ""
+    # )),
 ]
 
-groups = [Group(i) for i in ["   ", "   ", "   ", "   ", "   ", "   ","   "]]
+groups = [Group(i) for i in ["   ", "   ", "   ", "   ", "   ", "   ", "   "]]
 
 for i, group in enumerate(groups):
     actual_key = str(i + 1)
     keys.extend([
-        # Switch to workspace N
-        Key([mod], actual_key, lazy.group[group.name].toscreen()),
-        # Send window to workspace N
-        Key([mod, "shift"], actual_key, lazy.window.togroup(group.name))
+    # Switch to workspace N
+    Key([mod], actual_key, lazy.group[group.name].toscreen()),
+    # Send window to workspace N
+    Key([mod, "shift"], actual_key, lazy.window.togroup(group.name))
     ])
 
 layouts = [
@@ -105,14 +130,14 @@ layouts = [
 
 widget_defaults = dict(
     font='sans',
-    fontsize=12,
-    padding=3,
+    fontsize=14,
+    padding=1,
 )
 extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
@@ -124,6 +149,7 @@ screens = [
                 widget.QuickExit(),
             ],
             24,
+            background="16161C",
         ),
     ),
 ]
