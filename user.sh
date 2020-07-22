@@ -37,6 +37,7 @@ fi
 
 #mkdir -p ~/.config/qtile/
 #cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
+chmod +x ~/.config/qtile/autostart.sh
 echo -e '#!/bin/sh\nexec qtile' > ~/.xinitrc
 
 echo "0" | sudo -S localectl set-x11-keymap es
