@@ -118,7 +118,8 @@ layouts = [
 widget_defaults = dict(
     font='sans',
     fontsize=14,
-    padding=1,
+    padding=3,
+    # foreground='#FAB795'
 )
 extension_defaults = widget_defaults.copy()
 
@@ -126,17 +127,41 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.TextBox("default config", name="default"),
-                widget.Systray(),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-                widget.QuickExit(),
+                # widget.CurrentLayout(),
+                widget.GroupBox(
+                    active = '#FDF0ED',
+	                inactive = '#6C6F93',
+                    block_highlight_text_color='#B877DB',
+                    fontshadow='#16161C',
+	                urgent_text = '#E95379',
+	                urgent_border = '#2E303E',
+
+                    highlight_method = "block",
+	                urgent_alert_method = "block",
+	                this_current_screen_border = '#2E303E',
+	                this_screen_border = '#1C1E26',
+	                other_current_screen_border = '#2E303E',
+	                other_screen_border = '#1C1E26',
+	                # foreground = '#B877DB',
+	                # background = '#B877DB',
+
+                    margin=3,
+                    padding=3,
+                    rounded=False,
+                    spacing=5,
+
+                    disable_drag=True,
+                    # hide_unused=True,
+                    ),
+                # widget.Prompt(),
+                # widget.WindowName(),
+                # widget.TextBox("default config", name="default"),
+                # widget.Systray(),
+                # widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
+                # widget.QuickExit(),
             ],
-            24,
-            background="16161C",
+            30,
+            background="#16161C",
         ),
     ),
 ]
