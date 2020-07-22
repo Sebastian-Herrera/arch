@@ -24,10 +24,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import os, subprocess
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.lazy import lazy
-from libqtile import layout, bar, widget
-
+from libqtile import layout, bar, widget, hook
 from typing import List  # noqa: F401
 
 mod = "mod4"
@@ -39,14 +39,14 @@ keys = [
     Key([mod], "Up", lazy.layout.up()),
     Key([mod], "Left", lazy.layout.left()),
     Key([mod], "Right", lazy.layout.right()),
+    # Move windows up or down in current stack
+    Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
+    Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
     # Change window sizes (MonadTall)
     Key([mod, "shift"], "Left", lazy.layout.shrink()),
     Key([mod, "shift"], "Right", lazy.layout.grow()),
     # Toggle floating
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
-    # Move windows up or down in current stack
-    Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
     # Kill window
@@ -119,7 +119,6 @@ widget_defaults = dict(
     font='sans',
     fontsize=14,
     padding=3,
-    # foreground='#FAB795'
 )
 extension_defaults = widget_defaults.copy()
 
@@ -127,22 +126,24 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                # widget.CurrentLayout(),
-                widget.GroupBox(
+                widget.CurrentLayoutIcon(
+                    padding=10,
+                    scale=0.6,
+                ),
+                widget.GroupBox(                    
+                    highlight_method = "block",
+	                urgent_alert_method = "block",
+
                     active = '#FDF0ED',
 	                inactive = '#6C6F93',
                     block_highlight_text_color='#B877DB',
                     fontshadow='#16161C',
 	                urgent_text = '#E95379',
 	                urgent_border = '#2E303E',
-
-                    highlight_method = "block",
-	                urgent_alert_method = "block",
 	                this_current_screen_border = '#2E303E',
-	                this_screen_border = '#1C1E26',
+	                this_screen_border = '#1e252c',
 	                other_current_screen_border = '#2E303E',
-	                other_screen_border = '#1C1E26',
-	                # foreground = '#B877DB',
+	                other_screen_border = '#1e252c',
 	                # background = '#B877DB',
 
                     margin=3,
@@ -153,6 +154,20 @@ screens = [
                     disable_drag=True,
                     # hide_unused=True,
                     ),
+
+                # widget.CPU(),
+                # widget.CPUGraph(),
+                # widget.Memory(),
+                # widget.MemoryGraph(),
+
+                # widget.Pomodoro(),
+                # widget.Pacman(),
+                # widget.PulseVolume(),
+                # widget.Sep(),
+                # widget.Systray(),
+                # widget.TaskList(),
+                # widget.Volume(),
+
                 # widget.Prompt(),
                 # widget.WindowName(),
                 # widget.TextBox("default config", name="default"),
@@ -160,8 +175,9 @@ screens = [
                 # widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
                 # widget.QuickExit(),
             ],
-            30,
-            background="#16161C",
+            size=30,
+            opacity=1.0,
+            background="#1A2026",
         ),
     ),
 ]
@@ -200,6 +216,11 @@ floating_layout = layout.Floating(float_rules=[
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
+
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart.sh'])
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
