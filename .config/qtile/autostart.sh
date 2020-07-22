@@ -1,2 +1,2 @@
 #!/bin/sh
-hsetroot -solid '#6EC1D6'
+hsetroot -solid '##1e252c'
