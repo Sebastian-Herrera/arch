@@ -1,1 +1,6 @@
-
+{
+    "qtile": {
+        "wm": "amarena",
+        "alacritty": "horizon"
+    }
+}
