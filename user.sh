@@ -46,14 +46,14 @@ echo "0" | sudo -S localectl set-x11-keymap es
 #pactl set-default-sink 'alsa_output.usb-Focusrite_Scarlett_6i6_USB_00011521-00.analog-surround-51'
 #pactl set-default-source 'alsa_input.usb-Focusrite_Scarlett_6i6_USB_00011521-00.multichannel-input'
 
+git clone https://github.com/fontello/typicons.font.git && (cd typicons.font && sudo mv font /usr/share/fonts/typicons) && rm -rfv typicons.font/
+curl -L -o material-design-icons.ttf https://www.dropbox.com/s/4fevs095ho7xtf9/material-design-icons.ttf\?dl\=1 && sudo mv material-design-icons.ttf /usr/share/fonts/
+curl -L -o icomoon.zip https://www.dropbox.com/s/hrkub2yo9iapljz/icomoon.zip\?dl\=1 && sudo unzip icomoon.zip -d /usr/share/fonts && rm icomoon.zip
+
 curl -L -o myosevka.zip https://www.dropbox.com/sh/nqyurzy8wcupkkz/myosevka.zip\?dl\=1 && sudo unzip myosevka.zip -d /usr/share/fonts/ && rm myosevka.zip
 curl -LJo Open_Sans.zip https://fonts.google.com/download\?family\=Open%20Sans && sudo unzip Open_Sans.zip -d /usr/share/fonts/open-sans/ && rm Open_Sans.zip
 curl -LJo sf-ui-display-cufonfonts.zip https://www.cufonfonts.com/download/font/sf-ui-display && sudo unzip sf-ui-display-cufonfonts.zip -d /usr/share/fonts/sf-ui-display/ && rm sf-ui-display-cufonfonts.zip
 curl -fLo "Iosevka Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf && sudo mv Iosevka\ Nerd\ Font\ Complete.otf /usr/share/fonts/
-
-git clone https://github.com/fontello/typicons.font.git && (cd typicons.font && sudo mv font /usr/share/fonts/typicons) && rm -rfv typicons.font/
-curl -L -o material-design-icons.ttf https://www.dropbox.com/s/4fevs095ho7xtf9/material-design-icons.ttf\?dl\=1 && sudo mv material-design-icons.ttf /usr/share/fonts/
-curl -L -o icomoon.zip https://www.dropbox.com/s/hrkub2yo9iapljz/icomoon.zip\?dl\=1 && sudo unzip icomoon.zip -d /usr/share/fonts && rm icomoon.zip
 
 #mkdir .config/gtk-3.0/
 #echo -e "[Settings]\ngtk-application-prefer-dark-theme=1" > .config/gtk-3.0/settings.ini
