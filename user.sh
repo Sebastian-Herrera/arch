@@ -53,7 +53,7 @@ curl -fLo "Iosevka Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fon
 
 git clone https://github.com/fontello/typicons.font.git && (cd typicons.font && sudo mv font /usr/share/fonts/typicons) && rm -rfv typicons.font/
 curl -L -o material-design-icons.ttf https://www.dropbox.com/s/4fevs095ho7xtf9/material-design-icons.ttf\?dl\=1 && sudo mv material-design-icons.ttf /usr/share/fonts/
-
+curl -L -o icomoon.zip https://www.dropbox.com/s/hrkub2yo9iapljz/icomoon.zip\?dl\=1 && sudo unzip icomoon.zip -d /usr/share/fonts && rm icomoon.zip
 
 #mkdir .config/gtk-3.0/
 #echo -e "[Settings]\ngtk-application-prefer-dark-theme=1" > .config/gtk-3.0/settings.ini
