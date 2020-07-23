@@ -134,17 +134,17 @@ screens = [
                     highlight_method = "block",
 	                urgent_alert_method = "block",
 
-                    active = '#FDF0ED',
-	                inactive = '#6C6F93',
-                    block_highlight_text_color='#B877DB',
-                    fontshadow='#16161C',
-	                urgent_text = '#E95379',
-	                urgent_border = '#2E303E',
-	                this_current_screen_border = '#2E303E',
-	                this_screen_border = '#1e252c',
-	                other_current_screen_border = '#2E303E',
-	                other_screen_border = '#1e252c',
-	                # background = '#B877DB',
+                    active = '#F4F5F2', #color15
+	                inactive = '#6C6F93', #color
+                    block_highlight_text_color='#CD84C8', #color5
+                    fontshadow='#000000',
+	                urgent_text = '#FB6396', #color1
+	                urgent_border = '#2E303E', #color0
+	                this_current_screen_border = '#2E303E', #color0
+	                this_screen_border = '#1e252c', #background1
+	                other_current_screen_border = '#2E303E', #color0
+	                other_screen_border = '#1e252c', #background1
+	                # background = '#CD84C8', #color5
 
                     margin=3,
                     padding=3,
@@ -154,7 +154,6 @@ screens = [
                     disable_drag=True,
                     # hide_unused=True,
                     ),
-
                 # widget.CPU(),
                 # widget.CPUGraph(),
                 # widget.Memory(),
@@ -177,7 +176,7 @@ screens = [
             ],
             size=30,
             opacity=1.0,
-            background="#1A2026",
+            background="#1A2026", #background0
         ),
     ),
 ]
