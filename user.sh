@@ -52,6 +52,7 @@ curl -LJo sf-ui-display-cufonfonts.zip https://www.cufonfonts.com/download/font/
 curl -fLo "Iosevka Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf && sudo mv Iosevka\ Nerd\ Font\ Complete.otf /usr/share/fonts/
 
 git clone https://github.com/fontello/typicons.font.git && (cd typicons.font && sudo mv font /usr/share/fonts/typicons) && rm -rfv typicons.font/
+curl -L -o material-design-icons.ttf https://www.dropbox.com/s/4fevs095ho7xtf9/material-design-icons.ttf\?dl\=1 && sudo mv material-design-icons.ttf /usr/share/fonts/
 
 
 #mkdir .config/gtk-3.0/
