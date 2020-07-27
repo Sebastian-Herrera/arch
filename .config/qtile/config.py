@@ -271,7 +271,6 @@ screens = [
                 #     ),                
                 widget.TextBox(
                     " ",
-                    #   nf-linux-devuan
                     foreground="#6C6F93", #color16
                     fontsize=18,
                     ),
