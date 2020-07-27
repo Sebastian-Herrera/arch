@@ -78,16 +78,19 @@ keys = [
     Key([], "XF86Tools", lazy.spawn("gtk-launch spotify.desktop")),
 
     # === Hardware Configs === #
+    # Sound
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")),
     Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
-    Key([], "XF86AudioPlay", lazy.spawn("playerctl --player=playerctld play-pause")), #Key([], "XF86AudioPlay", lazy.spawn("omnipause toggle")),
-    Key([], "XF86AudioPrev", lazy.spawn("playerctl --player=playerctld previous")), #Key([], "XF86AudioPrev", lazy.spawn("omnipause previous")),
-    Key([], "XF86AudioNext", lazy.spawn("playerctl --player=playerctld next")), #Key([], "XF86AudioNext", lazy.spawn("omnipause next")),
+    Key([], "XF86AudioPlay", lazy.spawn("playerctl --player=playerctld play-pause")), #("omnipause toggle"),
+    Key([], "XF86AudioPrev", lazy.spawn("playerctl --player=playerctld previous")), #("omnipause previous"),
+    Key([], "XF86AudioNext", lazy.spawn("playerctl --player=playerctld next")), #("omnipause next"),
     Key([mod], "XF86AudioPlay", lazy.spawn("playerctl --all-players stop")),
+    #Screenshot
+    Key([], "Print", lazy.spawn("escrotum")),
 ]
 
-groups = [Group(i) for i in ["   ", "   ", "   ", "   ", "   ", "   ", "   "]]
+groups = [Group(i) for i in ["   ", " ﬏  ", "   ", "   ", "   ", "   ", "   "]] # 
 
 for i, group in enumerate(groups):
     actual_key = str(i + 1)
@@ -116,7 +119,11 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='sans',
+    # font='sans',
+    # font='SF UI Display',
+    font='Iosevka Custom',
+    # font='DroidSansMono Nerd Font',
+    fontshadow='#000000',
     fontsize=14,
     padding=3,
 )
@@ -126,16 +133,23 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayoutIcon(
-                    padding=10,
-                    scale=0.6,
-                ),
+                widget.TextBox(
+                    " 異 ",
+                    #   space
+                    # 異  nf-mdi-rocket
+                    #   nf-fae-grav
+                    #   nf-fae-galaxy
+                    #   nf-fae-telescope
+                    #  
+                    foreground="#6C6F93", #color16
+                    fontsize=23,
+                    ),
                 widget.GroupBox(                    
                     highlight_method = "block",
 	                urgent_alert_method = "block",
 
                     active = '#F4F5F2', #color15
-	                inactive = '#6C6F93', #color
+	                inactive = '#6C6F93', #color16
                     block_highlight_text_color='#CD84C8', #color5
                     fontshadow='#000000',
 	                urgent_text = '#FB6396', #color1
@@ -153,30 +167,118 @@ screens = [
 
                     disable_drag=True,
                     # hide_unused=True,
+
+                    # ﵁  ﰧ  nf-mdi-view nf-mdi-view_dashboard_variant nf-mdi-view_sequential
+                    # ﬿  nf-mdi-collage
+                    #   nf-fa-th_large
                     ),
+                widget.TaskList(
+                    highlight_method='block',
+                    title_width_method='uniform',
+                    urgent_alert_method='block',
+
+                    foreground='#6C6F93',
+                    border='#2E303E',
+                    unfocused_border='#1e252c',
+                    urgent_border='#FB6396',
+                    font='DroidSansMono Nerd Font',
+                    fontshadow=None,
+                    icon_size=0,
+
+                    markup_normal='  {}',
+                    markup_focused='<span foreground="#CD84C8">  {}</span>',
+                    markup_minimized='<span foreground="#6C6F93" strikethrough_color="#4CB9D6">  <s>{}</s></span>', #  nf-fa-caret_up   circle   expand   compress   toggle   drop_circle
+                    markup_floating=None,
+                    markup_maximized=None,
+                    # markup_focused='<span foreground="#94CF95"></span>  {}',
+                    # markup_minimized="<b>This is bold.</b> <i>This is itallic.</i> <s>This is strikethrough.</s> <sub>This is subscript.</sub>",
+                    # markup_minimized="<sup>This is superscript.</sup> <small>This makes the font smaller.</small> <big>This makes the font larger.</big>",
+                    # markup_minimized="<u>This is underlined text.</u> <tt>This uses a Monospace font.</tt> This is normal text UNCHANGED.", 
+                    # markup_minimized="<span foreground='blue'>Blue text (single quotes here)!</span> <span size='x-large'>Extra Large Text</span>",
+                    # markup_minimized="<span font='30' foreground='red'>30 point text.</span>",
+
+                    # borderwidth=2,
+                    margin=3,
+                    # margin_x=None,
+                    # margin_y=None,
+                    padding=3,
+                    # padding_x=None,
+                    # padding_y=None,
+                    rounded=False,
+                    spacing=5,
+                ),
                 # widget.CPU(),
                 # widget.CPUGraph(),
                 # widget.Memory(),
                 # widget.MemoryGraph(),
+                # widget.SwapGraph(),
+                # widget.HDDBusyGraph(),
+                # widget.HDDGraph(),
+                widget.TextBox(
+                    "",
+                    # ⏽   nf-iec-power_on
+                    #    nf-fa-ellipsis_v
+                    #    dot
+                    #    nf-mdi-drag_vertical
+                    #    nf-mdi-menu_right
+                    #    nf-pl-left_hard_divider
+                    #   nf-oct-triangle
+                    foreground="#6C6F93", #color16
+                    fontsize=20,
+                    ),
+                # widget.Notify(),
+                widget.Pomodoro(
+                    # prefix_inactive='🌌   START',
+                    # prefix_active='🛸 ',
+                    # prefix_break='🌴 ',
+                    # prefix_long_break='🌴 ',
+                    prefix_inactive=' start', # pomodoro
+                    prefix_active='祥 ', # clock
+                    prefix_break=' ', #  nf-fae-isle  
+                    prefix_long_break=' ', #  nf-pom-long_pause
+                    prefix_paused=' pause', #   nf-mdi-beach
 
-                # widget.Pomodoro(),
-                # widget.Pacman(),
+                    color_inactive = '#6C6F93', #color16
+                    color_active = '#CD84C8', #color5
+                    color_break = '#94CF95', #color2
+                    font='DroidSansMono Nerd Font',
+
+                    length_pomodori=25,
+                    length_short_break=5,
+                    length_long_break=10,
+                    ),
                 # widget.PulseVolume(),
-                # widget.Sep(),
-                # widget.Systray(),
-                # widget.TaskList(),
                 # widget.Volume(),
 
                 # widget.Prompt(),
-                # widget.WindowName(),
                 # widget.TextBox("default config", name="default"),
                 # widget.Systray(),
-                # widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
+                widget.TextBox(
+                    "",
+                    foreground="#6C6F93", #color16
+                    fontsize=20,
+                    ),
+                widget.Clock(
+                    # format='%I:%M %p %a',
+                    fmt=" {}",
+                    format='%I:%M:%S',
+                    foreground="#6C6F93", #color16
+                    ),
                 # widget.QuickExit(),
+                # widget.CurrentLayoutIcon(
+                #     padding=10,
+                #     scale=0.55,
+                #     ),                
+                widget.TextBox(
+                    " ",
+                    #   nf-linux-devuan
+                    foreground="#6C6F93", #color16
+                    fontsize=18,
+                    ),
             ],
+            background="#1A2026", #background0
             size=30,
             opacity=1.0,
-            background="#1A2026", #background0
         ),
     ),
 ]
@@ -230,3 +332,4 @@ def start_once():
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+# 🌌🔭👩‍🚀👩‍💻🛰️🚀🌠🪐🛸⌚⏰⏱️🎉📡🌴🏝️🏖️💜🟣🟪☂️🍇🦄💙🟦🔷🔹🔵🐦
