@@ -21,7 +21,7 @@ ignore_newline = no
 stack_duplicates = false
 hide_duplicate_count = yes
 show_indicators = no
-icon_position = off
+icon_position = left
 sticky_history = yes
 history_length = 20
 browser = /usr/bin/firefox -new-tab
@@ -37,18 +37,18 @@ context = ctrl+shift+period
 
 [urgency_low]
 timeout = 4
-background = "#141c21"
-foreground = "#93a1a1"
-frame_color = "#8bc34a"
+background = "#1A2026"
+foreground = "#CD84C8"
+frame_color = "#94CF95"
 
 [urgency_normal]
 timeout = 8
-background = "#141c21"
-foreground = "#93a1a1"
-frame_color = "#ba68c8"
+background = "#1A2026"
+foreground = "#CD84C8"
+frame_color = "#C269BC"
 
 [urgency_critical]
 timeout = 0
-background = "#141c21"
-foreground = "#93a1a1"
+background = "#1A2026"
+foreground = "#CD84C8"
 frame_color = "#ff7043"
