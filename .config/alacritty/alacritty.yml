@@ -156,23 +156,21 @@
   # it is recommended to set `use_thin_strokes` to `false`.
   #use_thin_strokes: true
 
-# If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
-
-# Colors (Tomorrow Night)
-#colors:
+# Base16 Horizon Dark 256 - alacritty color config
+# Michaël Ball (http://github.com/michael-ball/) https://github.com/aaron-williamson/base16-alacritty/blob/master/colors/base16-horizon-dark-256.yml
+colors:
   # Default colors
-  #primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
+  primary:
+   background: '#1c1e26'
+   foreground: '#cbced0'
 
     # Bright and dim foreground colors
     #
     # The dimmed foreground color is calculated automatically if it is not present.
     # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
     # is `false`, the normal foreground color will be used.
-    #dim_foreground: '#828482'
-    #bright_foreground: '#eaeaea'
+  #  dim_foreground: '#828482'
+  #  bright_foreground: '#eaeaea'
 
   # Cursor colors
   #
@@ -180,9 +178,9 @@
   #
   # Allowed values are CellForeground and CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
-  #cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
+   cursor:
+    text: CellBackground
+    cursor: CellForeground
 
   # Vi mode cursor colors
   #
@@ -211,49 +209,35 @@
   # Allowed values are CellForeground and CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   #search:
-  #  matches:
-  #    foreground: '#000000'
-  #    background: '#ffffff'
-  #
-  #  bar:
-  #    background: CellForeground
-  #    foreground: CellBackground
+   matches:
+     foreground: '#000000'
+     background: '#ffffff'
+  
+   bar:
+     background: CellForeground
+     foreground: CellBackground
 
   # Normal colors
-  #normal:
-  #  black:   '#1d1f21'
-  #  red:     '#cc6666'
-  #  green:   '#b5bd68'
-  #  yellow:  '#f0c674'
-  #  blue:    '#81a2be'
-  #  magenta: '#b294bb'
-  #  cyan:    '#8abeb7'
-  #  white:   '#c5c8c6'
+  normal:
+    black:      '#1c1e26'
+    red:        '#e93c58'
+    green:      '#efaf8e'
+    yellow:     '#efb993'
+    blue:       '#df5273'
+    magenta:    '#b072d1'
+    cyan:       '#24a8b4'
+    white:      '#cbced0'
 
   # Bright colors
-  #bright:
-  #  black:   '#666666'
-  #  red:     '#d54e53'
-  #  green:   '#b9ca4a'
-  #  yellow:  '#e7c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#c397d8'
-  #  cyan:    '#70c0b1'
-  #  white:   '#eaeaea'
-
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  #dim:
-  #  black:   '#131415'
-  #  red:     '#864343'
-  #  green:   '#777c44'
-  #  yellow:  '#9e824c'
-  #  blue:    '#556a7d'
-  #  magenta: '#75617b'
-  #  cyan:    '#5b7d78'
-  #  white:   '#828482'
+  bright:
+    black:      '#6f6f70'
+    red:        '#e93c58'
+    green:      '#efaf8e'
+    yellow:     '#efb993'
+    blue:       '#df5273'
+    magenta:    '#b072d1'
+    cyan:       '#24a8b4'
+    white:      '#e3e6ee'
 
   # Indexed Colors
   #
@@ -263,7 +247,16 @@
   # Example:
   #   `- { index: 16, color: '#ff00ff' }`
   #
-  #indexed_colors: []
+  indexed_colors:
+    - { index: 16, color: '#e58d7d' }
+    - { index: 17, color: '#e4a382' }
+    - { index: 18, color: '#232530' }
+    - { index: 19, color: '#2e303e' }
+    - { index: 20, color: '#9da0a2' }
+    - { index: 21, color: '#dcdfe4' }
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
 
 # Bell
 #
