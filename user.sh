@@ -35,6 +35,8 @@ else
         echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
         git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+        perl -pi -e 's/(?<=plugins=).*/(zsh-syntax-highlighting zsh-autosuggestions git nvm)/g' ~/Downloads/.zshrc
 fi
 
 #mkdir -p ~/.config/qtile/
