@@ -108,7 +108,7 @@ layouts = [
         border_focus='#CD84C8',
         border_normal='#6C6F93',
         border_width=2,
-        margin=5,
+        margin=15,
     ),
     layout.Max(),
     # layout.Stack(num_stacks=2),
@@ -304,7 +304,8 @@ main = None
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(float_rules=[
+floating_layout = layout.Floating(
+    float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
     {'wmclass': 'confirm'},
     {'wmclass': 'dialog'},
@@ -320,7 +321,11 @@ floating_layout = layout.Floating(float_rules=[
     {'wname': 'branchdialog'},  # gitk
     {'wname': 'pinentry'},  # GPG key password entry
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
-])
+    ],
+    border_focus='#94CF95',
+    border_normal='#6C6F93',
+    border_width=2,
+    )
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 
