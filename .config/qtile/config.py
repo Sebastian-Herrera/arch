@@ -42,9 +42,11 @@ keys = [
     # Move windows up or down in current stack
     Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
     Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
-    # Change window sizes (MonadTall)
-    Key([mod, "shift"], "Left", lazy.layout.shrink()),
-    Key([mod, "shift"], "Right", lazy.layout.grow()),
+    Key([mod, "shift"], "Left", lazy.layout.shuffle_left()),
+    Key([mod, "shift"], "Right", lazy.layout.shuffle_right()),
+    # # Change window sizes (MonadTall)
+    # Key([mod, "shift"], "Left", lazy.layout.shrink()),
+    # Key([mod, "shift"], "Right", lazy.layout.grow()),
     # Toggle floating
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
     # Toggle between different layouts as defined below
@@ -102,7 +104,12 @@ for i, group in enumerate(groups):
     ])
 
 layouts = [
-    layout.Bsp(),
+    layout.Bsp(
+        border_focus='#CD84C8',
+        border_normal='#6C6F93',
+        border_width=2,
+        margin=5,
+    ),
     layout.Max(),
     # layout.Stack(num_stacks=2),
     # Try more layouts by unleashing below layouts.
