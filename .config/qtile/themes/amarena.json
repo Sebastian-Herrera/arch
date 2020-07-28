@@ -3,7 +3,7 @@
     "background1": "#1e252c",
     "foreground": "#FFFFFF",
     "cursorColor": "#FFFFFF",
-    "color0": "#242D35",
+    "color0": "#2E303E",
     "color1": "#FB6396",
     "color2": "#94CF95",
     "color3": "#F692B2",
@@ -18,5 +18,6 @@
     "color12": "#4CB9D6",
     "color13": "#C269BC",
     "color14": "#58D6BF",
-    "color15": "#F4F5F2"
+    "color15": "#F4F5F2",
+    "color16": "#6C6F93"
 }
