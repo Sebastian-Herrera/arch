@@ -20,7 +20,7 @@ sudo mkinitcpio -p linux
 #sudo nvidia-xconfig
 
 echo '0' | sudo pacman -Sy --noconfirm xdg-user-dirs neofetch noto-fonts-emoji unzip qtile hsetroot gtk2 gtk3 alacritty perl-file-mimeinfo ranger nautilus pulseaudio playerctl unrar fzf catimg redshift
-yay -Sy --noconfirm zsh-theme-powerlevel10k-git escrotum-git google-chrome visual-studio-code-bin
+yay -Sy --noconfirm zsh-theme-powerlevel10k-git escrotum-git google-chrome visual-studio-code-bin spotify spicetify-cli
 #rofi #localectl set-locale LANG=en_US.UTF-8
 #systemd-numlockontty
 #systemctl enable numLockOnTty
@@ -69,6 +69,9 @@ sudo mkdir -p /opt/telegram/
 sudo tar -xvf tsetup.tar.xz -C /opt/telegram/
 sudo ln -s /opt/telegram/Telegram/Telegram /usr/bin/telegram
 rm -rfv tsetup.tar.xz
+
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
 
 #git clone https://github.com/cylgom/ly.git
 #(cd ly && make github && make && sudo make install)
