@@ -32,6 +32,57 @@ from typing import List  # noqa: F401
 
 mod = "mod4"
 
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart.sh'])
+
+def resize(qtile, direction):
+    layout = qtile.current_layout
+    child = layout.current
+    parent = child.parent
+
+    while parent:
+        if child in parent.children:
+            layout_all = False
+
+            if (direction == "left" and parent.split_horizontal) or (
+                direction == "up" and not parent.split_horizontal
+            ):
+                parent.split_ratio = max(5, parent.split_ratio - layout.grow_amount)
+                layout_all = True
+            elif (direction == "right" and parent.split_horizontal) or (
+                direction == "down" and not parent.split_horizontal
+            ):
+                parent.split_ratio = min(95, parent.split_ratio + layout.grow_amount)
+                layout_all = True
+
+            if layout_all:
+                layout.group.layout_all()
+                break
+
+        child = parent
+        parent = child.parent
+
+@lazy.function
+def resize_left(qtile):
+    resize(qtile, "left")
+
+
+@lazy.function
+def resize_right(qtile):
+    resize(qtile, "right")
+
+
+@lazy.function
+def resize_up(qtile):
+    resize(qtile, "up")
+
+
+@lazy.function
+def resize_down(qtile):
+    resize(qtile, "down")
+
 keys = [
     # === Qtile === #
     # Switch between windows in current stack pane
@@ -44,9 +95,24 @@ keys = [
     Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
     Key([mod, "shift"], "Left", lazy.layout.shuffle_left()),
     Key([mod, "shift"], "Right", lazy.layout.shuffle_right()),
-    # # Change window sizes (MonadTall)
-    # Key([mod, "shift"], "Left", lazy.layout.shrink()),
-    # Key([mod, "shift"], "Right", lazy.layout.grow()),
+    # Change window sizes (VerticalTile)
+    Key([mod], 'm', lazy.layout.maximize()),
+    Key([mod], 'n', lazy.layout.normalize()),
+    # Key([mod], "space", lazy.layout.next()),
+    # Change window sizes (Bsp)
+    Key([mod, "mod1"], "Down", lazy.layout.flip_down()),
+    Key([mod, "mod1"], "Up", lazy.layout.flip_up()),
+    Key([mod, "mod1"], "Left", lazy.layout.flip_left()),
+    Key([mod, "mod1"], "Right", lazy.layout.flip_right()),
+    Key([mod, "control"], "Down", resize_down),
+    Key([mod, "control"], "Up", resize_up),
+    Key([mod, "control"], "Left", resize_left),
+    Key([mod, "control"], "Right", resize_right),
+    # Key([mod, "control"], "Down", lazy.layout.grow_down()),
+    # Key([mod, "control"], "Up", lazy.layout.grow_up()),
+    # Key([mod, "control"], "Left", lazy.layout.grow_left()),
+    # Key([mod, "control"], "Right", lazy.layout.grow_right()),
+    Key([mod], "space", lazy.layout.toggle_split()),
     # Toggle floating
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
     # Toggle between different layouts as defined below
@@ -58,11 +124,6 @@ keys = [
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
     # Key([mod], "r", lazy.spawncmd()),
-    # Switch window focus to other pane(s) of stack
-    Key([mod], "space", lazy.layout.next()),
-    # Swap panes of split stack
-    Key([mod, "shift"], "space", lazy.layout.rotate()),
-
     # === Applications === #
     # Menu
     Key([mod], "Return", lazy.spawn("rofi -show run")),
@@ -88,7 +149,7 @@ keys = [
     Key([], "XF86AudioPrev", lazy.spawn("playerctl --player=playerctld previous")), #("omnipause previous"),
     Key([], "XF86AudioNext", lazy.spawn("playerctl --player=playerctld next")), #("omnipause next"),
     Key([mod], "XF86AudioPlay", lazy.spawn("playerctl --all-players stop")),
-    #Screenshot
+    # Screenshot
     Key([], "Print", lazy.spawn("escrotum")),
 ]
 
@@ -104,16 +165,15 @@ for i, group in enumerate(groups):
     ])
 
 layouts = [
+    layout.Max(),
+    # layout.Stack(num_stacks=2),
+    # Try more layouts by unleashing below layouts.
     layout.Bsp(
         border_focus='#CD84C8',
         border_normal='#6C6F93',
         border_width=2,
         margin=15,
     ),
-    layout.Max(),
-    # layout.Stack(num_stacks=2),
-    # Try more layouts by unleashing below layouts.
-    # layout.Bsp(),
     # layout.Columns(),
     # layout.Matrix(),
     # layout.MonadTall(),
@@ -121,7 +181,12 @@ layouts = [
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
-    # layout.VerticalTile(),
+    layout.VerticalTile(
+        border_focus='#CD84C8',
+        border_normal='#6C6F93',
+        border_width=2,
+        margin=15,
+    ),
     # layout.Zoomy(),
 ]
 
@@ -328,11 +393,6 @@ floating_layout = layout.Floating(
     )
 auto_fullscreen = True
 focus_on_window_activation = "smart"
-
-@hook.subscribe.startup_once
-def start_once():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/autostart.sh'])
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
