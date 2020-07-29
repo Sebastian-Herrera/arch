@@ -98,7 +98,7 @@ keys = [
     # Change window sizes (VerticalTile)
     Key([mod], 'm', lazy.layout.maximize()),
     Key([mod], 'n', lazy.layout.normalize()),
-    # Key([mod], "space", lazy.layout.next()),
+    Key([mod], "space", lazy.layout.next()),
     # Change window sizes (Bsp)
     Key([mod, "mod1"], "Down", lazy.layout.flip_down()),
     Key([mod, "mod1"], "Up", lazy.layout.flip_up()),
@@ -112,7 +112,7 @@ keys = [
     # Key([mod, "control"], "Up", lazy.layout.grow_up()),
     # Key([mod, "control"], "Left", lazy.layout.grow_left()),
     # Key([mod, "control"], "Right", lazy.layout.grow_right()),
-    Key([mod], "space", lazy.layout.toggle_split()),
+    Key([mod, "shift"], "space", lazy.layout.toggle_split()),
     # Toggle floating
     Key([mod, "shift"], "f", lazy.window.toggle_floating()),
     # Toggle between different layouts as defined below
