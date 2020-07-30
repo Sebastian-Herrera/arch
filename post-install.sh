@@ -28,5 +28,6 @@ systemctl enable NetworkManager
 
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
+sed -i '/GRUB_TIMEOUT=5/s/5/1/g' /etc/default/grub
 
 exit
