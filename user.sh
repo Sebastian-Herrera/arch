@@ -21,6 +21,7 @@ sudo mkinitcpio -p linux
 
 echo '0' | sudo pacman -Sy --noconfirm xdg-user-dirs neofetch noto-fonts-emoji unzip qtile hsetroot gtk2 gtk3 alacritty rofi perl-file-mimeinfo ranger nautilus pulseaudio playerctl unrar fzf catimg redshift nodejs-lts-erbium npm ntfs-3g
 yay -Sy --noconfirm systemd-numlockontty zsh-theme-powerlevel10k-git escrotum-git google-chrome visual-studio-code-bin spotify spicetify-cli
+curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import -
 #localectl set-locale LANG=en_US.UTF-8
 systemctl enable numLockOnTty
 
