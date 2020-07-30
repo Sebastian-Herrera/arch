@@ -32,5 +32,7 @@ mv ~/arch/.config/ /mnt/home/herrera/
 
 cp -rfv ~/arch/etc/ /mnt/
 
+mv ~/arch/.prettierrc /mnt/home/herrera/ && mv ~/arch/.stylelintrc /mnt/home/herrera/
+
 umount -R /mnt
 reboot
