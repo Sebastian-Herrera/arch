@@ -1,6 +1,13 @@
 #!/bin/sh
 set -euo pipefail
 
+if [ -d ~/.oh-my-zsh/ ]
+then
+        echo "..."
+else
+        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
 echo '0' | sudo -S chown -Rv herrera:herrera ~/
 echo '0' | sudo -S pacman -Syyu
 
@@ -25,20 +32,13 @@ yay -Sy --noconfirm systemd-numlockontty zsh-theme-powerlevel10k-git escrotum-gi
 #localectl set-locale LANG=en_US.UTF-8
 echo '0' | sudo -S systemctl enable numLockOnTty
 
+echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search && bindkey '^[[A' history-substring-search-up && bindkey '^[[B' history-substring-search-down
+perl -pi -e 's/(?<=plugins=).*/(zsh-syntax-highlighting zsh-autosuggestions archlinux colored-man-pages history-substring-search git)/g' ~/.zshrc
+
 xdg-user-dirs-update
-
-if [ -d ~/.oh-my-zsh/ ]
-then
-        echo "..."
-else
-        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-        echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-        git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search && bindkey '^[[A' history-substring-search-up && bindkey '^[[B' history-substring-search-down
-
-        perl -pi -e 's/(?<=plugins=).*/(zsh-syntax-highlighting zsh-autosuggestions archlinux colored-man-pages history-substring-search git)/g' ~/.zshrc
-fi
 
 #mkdir -p ~/.config/qtile/
 #cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
