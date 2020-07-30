@@ -8,6 +8,8 @@ else
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
+mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+
 echo '0' | sudo -S chown -Rv herrera:herrera ~/
 echo '0' | sudo -S pacman -Syyu
 
@@ -36,7 +38,7 @@ echo '0' | sudo -S systemctl enable numLockOnTty
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search && bindkey '^[[A' history-substring-search-up && bindkey '^[[B' history-substring-search-down
-perl -pi -e 's/(?<=plugins=).*/(zsh-syntax-highlighting zsh-autosuggestions archlinux colored-man-pages history-substring-search git)/g' ~/.zshrc
+#perl -pi -e 's/(?<=plugins=).*/(zsh-syntax-highlighting zsh-autosuggestions archlinux colored-man-pages history-substring-search git)/g' ~/.zshrc
 
 xdg-user-dirs-update
 
@@ -95,6 +97,6 @@ echo $changepass"oCBICAg4paI4paI4oCB4paI4paI4paI4paI4paI4paI4paI4oCB4paI4paI4paI
 passwd
 
 echo '' | sudo tee ~/.zlogin
-rm -fv ~/.zshrc.pre-oh-my-zsh ~/user.sh
+rm -fv ~/user.sh #~/.zshrc.pre-oh-my-zsh 
 #startx
 reboot
