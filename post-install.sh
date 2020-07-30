@@ -26,7 +26,7 @@ sed -i '/# %wheel ALL=(ALL) ALL/s/^# //g' /etc/sudoers
 
 systemctl enable NetworkManager
 
-grub-install /dev/sda
+grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 exit
