@@ -30,8 +30,9 @@ echo "sh ~/user.sh" >> /mnt/home/herrera/.zlogin
 
 mv ~/arch/.config/ /mnt/home/herrera/
 
-mkdir /mnt/etc/fonts/ 
-mv ~/arch/local.conf /mnt/etc/fonts/
+#mkdir /mnt/etc/fonts/ 
+#mv ~/arch/local.conf /mnt/etc/fonts/
+cp -rfv ~/arch/etc/ /mnt/
 
 umount -R /mnt
 reboot
