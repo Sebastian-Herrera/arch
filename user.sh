@@ -73,9 +73,10 @@ sudo ln -s /opt/telegram/Telegram/Telegram /usr/bin/telegram
 rm -rfv tsetup.tar.xz
 
 RESPONSIVELY_URL=$(curl https://api.github.com/repos/manojVivek/responsively-app/releases/latest | grep "h.*\.AppImage" | cut -d '"' -f 4)
-curl -LJO $RESPONSIVELY_URL
+curl -LJo ResponsivelyApp.AppImage $RESPONSIVELY_URL
 mkdir ~/Applications/
-mv ResponsivelyApp-0.9.0.AppImage ~/Applications/
+mv ResponsivelyApp.AppImage ~/Applications/
+chmod +x ~/Applications/ResponsivelyApp.AppImage
 
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
