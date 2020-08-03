@@ -120,7 +120,7 @@ keys = [
     # Kill window
     Key([mod], "q", lazy.window.kill()),
     Key([], "Cancel", lazy.window.kill()),
-    # Restart Qtile
+    # Restart/Exit Qtile
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
     # Key([mod], "r", lazy.spawncmd()),
