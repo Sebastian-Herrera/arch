@@ -1,5 +1,5 @@
-tabWidth: 4
-useTabs: true
+tabWidth: 2
+# useTabs: true
 semi: true
 singleQuote: true
 quoteProps: as-needed
@@ -17,8 +17,8 @@ proseWrap: preserve
 htmlWhitespaceSensitivity: css
 vueIndentScriptAndStyle: false
 endOfLine: lf
-
-overrides:
-    - files: '*.html'
-      options:
-          tabWidth: 2
+#
+# overrides:
+#   - files: '*.html'
+#     options:
+#       tabWidth: 2
