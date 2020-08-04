@@ -30,7 +30,7 @@ sudo mkinitcpio -p linux
 
 echo '0' | sudo pacman -Sy --noconfirm xdg-user-dirs neofetch noto-fonts-emoji unzip qtile picom hsetroot gtk2 gtk3 alacritty rofi dunst xdg-utils perl-file-mimeinfo ranger nautilus pulseaudio playerctl unrar fzf catimg redshift ntfs-3g wget
 curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import - && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
-yay -Sy --noconfirm systemd-numlockontty zsh-theme-powerlevel10k-git escrotum-git bottom google-chrome visual-studio-code-bin spotify spicetify-cli
+yay -Sy --noconfirm systemd-numlockontty zsh-theme-powerlevel10k-git nautilus-open-any-terminal escrotum-git bottom google-chrome visual-studio-code-bin spotify spicetify-cli
 #localectl set-locale LANG=en_US.UTF-8
 echo '0' | sudo -S systemctl enable numLockOnTty
 
@@ -41,6 +41,10 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM
 #perl -pi -e 's/(?<=plugins=).*/(zsh-syntax-highlighting zsh-autosuggestions archlinux colored-man-pages history-substring-search git)/g' ~/.zshrc
 
 xdg-user-dirs-update
+
+gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
+gsettings set com.github.stunkymonkey.nautilus-open-any-terminal keybindings '<Ctrl><Alt>t'
+gsettings set com.github.stunkymonkey.nautilus-open-any-terminal new-tab true
 
 #mkdir -p ~/.config/qtile/
 #cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
