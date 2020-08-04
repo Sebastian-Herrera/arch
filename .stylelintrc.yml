@@ -1,4 +1,5 @@
 # https://github.com/hudochenkov/stylelint-config-hudochenkov/blob/master/order.js
+---
 extends:
   - 'stylelint-a11y/recommended'
   - 'stylelint-config-standard'
@@ -27,15 +28,15 @@ rules:
   a11y/selector-pseudo-class-focus: true
 
   csstools/value-no-unknown-custom-properties: true
-  csstools/use-nesting: 'always'
+  csstools/use-nesting: null
   plugin/declaration-block-no-ignored-properties: true
   plugin/stylelint-group-selectors: true
   plugin/no-low-performance-animation-properties: true
   plugin/8-point-grid:
     base: 8
-    allowlist:
-      - 2px
-      - 4px
+    # allowlist:
+    #   - 2px
+    #   - 4px
 
   order/order:
     - - dollar-variables
