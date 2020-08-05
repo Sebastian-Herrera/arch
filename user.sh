@@ -82,7 +82,7 @@ sudo tar -xvf tsetup.tar.xz -C /opt/telegram/
 sudo ln -s /opt/telegram/Telegram/Telegram /usr/bin/telegram
 rm -rfv tsetup.tar.xz
 
-RESPONSIVELY_URL=$(curl https://api.github.com/repos/manojVivek/responsively-app/releases/latest | grep "h.*\.AppImage" | cut -d '"' -f 4)
+RESPONSIVELY_URL=$(curl -s https://api.github.com/repos/responsively-org/responsively-app/releases/latest | grep "h.*\.AppImage" | cut -d '"' -f 4)
 curl -LJo ResponsivelyApp.AppImage $RESPONSIVELY_URL
 mkdir ~/Applications/
 mv ResponsivelyApp.AppImage ~/Applications/
