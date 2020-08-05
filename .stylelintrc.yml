@@ -4,6 +4,7 @@ extends:
   - 'stylelint-a11y/recommended'
   - 'stylelint-config-standard'
 plugins:
+  - 'stylelint-selector-bem-pattern'
   - 'stylelint-order'
   - 'stylelint-value-no-unknown-custom-properties'
   - 'stylelint-use-nesting'
@@ -26,6 +27,12 @@ rules:
   a11y/no-outline-none: true
   # a11y/no-text-align-justify: true
   a11y/selector-pseudo-class-focus: true
+
+  plugin/selector-bem-pattern:
+    preset: 'bem' # BLOCK ELEMENT MODIFIER
+    componentName: '^[A-Z][A-Za-z]+$'
+    componentSelectors: "^\\.{componentName}(__[a-z]+(-[a-z]+)?)?(--[a-z]+(--[a-z]+)?)?$"
+    ignoreSelectors: "^\\._.+$"
 
   csstools/value-no-unknown-custom-properties: true
   csstools/use-nesting: null
