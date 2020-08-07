@@ -106,6 +106,9 @@ sudo sed -i '/#greeter-ses/s/^#//g' /etc/lightdm/lightdm.conf
 sudo sed -i 's/antergos/lightdm-webkit2-dmg_blue/' /etc/lightdm/lightdm-webkit2-greeter.conf
 sudo systemctl enable lightdm.service
 
+curl -LJO https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+unzip ngrok-stable-linux-amd64.zip -d /usr/bin/ && rm -fv ngrok-stable-linux-amd64.zip
+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
 nvm install --lts
 
