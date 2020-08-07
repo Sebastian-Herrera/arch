@@ -25,7 +25,7 @@ yay -Sy --noconfirm xorg-server xorg-xinit mesa mesa-demos nvidia-340xx-lts
 #nvidia-340xx-utils
 #opencl-nvidia-340xx
 sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
-sudo mkinitcpio -p linux
+sudo mkinitcpio -p linux-lts
 #sudo nvidia-xconfig
 
 echo '0' | sudo pacman -Sy --noconfirm xdg-user-dirs neofetch noto-fonts-emoji unzip qtile picom hsetroot gtk2 gtk3 alacritty rofi dunst xdg-utils perl-file-mimeinfo ranger nautilus pulseaudio playerctl unrar fzf catimg redshift ntfs-3g wget
