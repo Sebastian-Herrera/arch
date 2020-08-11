@@ -19,8 +19,8 @@ proseWrap: preserve
 htmlWhitespaceSensitivity: css
 vueIndentScriptAndStyle: false
 endOfLine: lf
-#
-# overrides:
-#   - files: '*.html'
-#     options:
-#       tabWidth: 2
+
+overrides:
+  - files: '*.js'
+    options:
+      printWidth: 100
