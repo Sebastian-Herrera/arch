@@ -113,7 +113,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
 nvm install --lts
 
 npm i -g prettier
-npm i -g stylelint stylelint-config-standard stylelint-order stylelint-value-no-unknown-custom-properties stylelint-use-nesting postcss stylelint-declaration-block-no-ignored-properties stylelint-group-selectors stylelint-high-performance-animation postcss-value-parser stylelint-8-point-grid stylelint stylelint-a11y
+npm i -g stylelint stylelint-config-standard stylelint-order stylelint-value-no-unknown-custom-properties stylelint-use-nesting postcss stylelint-declaration-block-no-ignored-properties stylelint-group-selectors stylelint-high-performance-animation postcss-value-parser stylelint-8-point-grid stylelint-a11y stylelint-selector-bem-pattern
 npm i -g eslint eslint-config-airbnb-base eslint-plugin-import
 npm i -g @babel/core @babel/cli @babel/preset-env core-js regenerator-runtime
 npm i -g webpack webpack-cli webpack-dev-server babel-loader
