@@ -30,7 +30,7 @@ sudo mkinitcpio -p linux-lts
 
 echo '0' | sudo pacman -Sy --noconfirm xdg-user-dirs neofetch noto-fonts-emoji unzip qtile picom hsetroot gtk2 gtk3 alacritty rofi dunst xdg-utils perl-file-mimeinfo ranger nautilus pulseaudio playerctl unrar fzf catimg redshift ntfs-3g wget gnome-keyring uget
 curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import - && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
-yay -Sy --noconfirm systemd-numlockontty zsh-theme-powerlevel10k-git nautilus-open-any-terminal escrotum-git bottom google-chrome visual-studio-code-bin notion-app spotify spicetify-cli
+yay -Sy --noconfirm systemd-numlockontty zsh-theme-powerlevel10k-git nautilus-open-any-terminal escrotum-git bottom google-chrome visual-studio-code-bin notion-app spotify spicetify-cli uget-integrator-chrome
 #localectl set-locale LANG=en_US.UTF-8
 echo '0' | sudo -S systemctl enable numLockOnTty
 
