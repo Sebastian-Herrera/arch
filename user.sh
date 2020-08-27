@@ -28,11 +28,10 @@ sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
 sudo mkinitcpio -p linux-lts
 #sudo nvidia-xconfig
 
-echo '0' | sudo pacman -Sy --noconfirm xdg-user-dirs neofetch noto-fonts-emoji unzip qtile picom hsetroot gtk2 gtk3 alacritty rofi dunst xdg-utils perl-file-mimeinfo ranger nautilus pulseaudio playerctl unrar fzf catimg redshift ntfs-3g wget gnome-keyring uget
+echo '0' | sudo pacman -Sy --noconfirm numlockx xdg-user-dirs neofetch noto-fonts-emoji unzip qtile picom hsetroot gtk2 gtk3 alacritty rofi dunst xdg-utils perl-file-mimeinfo ranger nautilus pulseaudio playerctl unrar fzf catimg redshift ntfs-3g wget gnome-keyring uget
 curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import - && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
-yay -Sy --noconfirm systemd-numlockontty zsh-theme-powerlevel10k-git nautilus-open-any-terminal escrotum-git bottom google-chrome visual-studio-code-bin notion-app spotify spicetify-cli uget-integrator-chrome
+yay -Sy --noconfirm zsh-theme-powerlevel10k-git nautilus-open-any-terminal escrotum-git bottom google-chrome visual-studio-code-bin notion-app spotify spicetify-cli uget-integrator-chrome
 #localectl set-locale LANG=en_US.UTF-8
-echo '0' | sudo -S systemctl enable numLockOnTty
 
 #echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -107,6 +106,8 @@ spicetify backup apply enable-devtool
 yay -Sy --noconfirm lightdm lightdm-webkit2-greeter
 sudo perl -pi -e 's/(?<=#greeter-session=).*/lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 sudo sed -i '/#greeter-ses/s/^#//g' /etc/lightdm/lightdm.conf
+sudo perl -pi -e 's/(?<=#greeter-setup-script=).*/\/usr\/bin\/numlockx on/g' /etc/lightdm/lightdm.conf
+sudo sed -i '/#greeter-setup-script/s/^#//g' /etc/lightdm/lightdm.conf
 (cd /usr/share/lightdm-webkit/themes/ && sudo git clone https://github.com/davidmogar/lightdm-webkit2-dmg_blue.git)
 sudo sed -i 's/antergos/lightdm-webkit2-dmg_blue/' /etc/lightdm/lightdm-webkit2-greeter.conf
 sudo systemctl enable lightdm.service
