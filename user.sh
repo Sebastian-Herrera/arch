@@ -71,6 +71,10 @@ FIRACODE_URL=$(curl https://api.github.com/repos/tonsky/firacode/releases/latest
 curl -LJo Fira_Code.zip $FIRACODE_URL
 sudo unzip Fira_Code.zip -d /usr/share/fonts/fira-code/ && rm Fira_Code.zip
 
+SCIENTIFICA_URL=$(curl https://api.github.com/repos/NerdyPepper/scientifica/releases/latest | grep "h.*\.tar" | cut -d '"' -f 4)
+curl -LJo scientifica-v2.1.tar $SCIENTIFICA_URL
+sudo tar -xvf scientifica-v2.1.tar -C /usr/share/fonts/
+
 #mkdir .config/gtk-3.0/
 #echo -e "[Settings]\ngtk-application-prefer-dark-theme=1" > .config/gtk-3.0/settings.ini
 
