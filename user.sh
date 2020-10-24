@@ -126,6 +126,7 @@ curl -LJO https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 sudo unzip ngrok-stable-linux-amd64.zip -d /usr/bin/ && rm -fv ngrok-stable-linux-amd64.zip
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
+source ~/.zshrc
 nvm install --lts
 
 npm i -g prettier
