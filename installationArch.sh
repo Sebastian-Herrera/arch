@@ -12,7 +12,7 @@ reflector --sort rate -l 5 --save /etc/pacman.d/mirrorlist
 
 mount /dev/sda1 /mnt
 
-pacstrap /mnt base base-devel linux-lts linux-firmware intel-ucode man-db man-pages grub networkmanager zsh neovim git
+pacstrap /mnt base base-devel linux linux-firmware intel-ucode man-db man-pages grub networkmanager zsh neovim git
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
