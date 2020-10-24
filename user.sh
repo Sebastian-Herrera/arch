@@ -20,7 +20,7 @@ git clone https://aur.archlinux.org/yay.git
 (cd yay && makepkg -si --noconfirm)
 rm -rfv yay/
 
-yay -Sy --noconfirm xorg-server xorg-xinit mesa mesa-demos nvidia-340xx-lts
+yay -Sy --noconfirm xorg-server xorg-xinit xorg-server-xephyr mesa mesa-demos nvidia-340xx-lts
 #nvidia-340xx-settings 
 #nvidia-340xx-utils
 #opencl-nvidia-340xx
