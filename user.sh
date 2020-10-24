@@ -135,6 +135,7 @@ npm i -g stylelint stylelint-config-standard stylelint-order stylelint-value-no-
 npm i -g eslint eslint-config-airbnb-base eslint-plugin-import
 npm i -g @babel/core @babel/cli @babel/preset-env core-js regenerator-runtime
 npm i -g webpack webpack-cli webpack-dev-server babel-loader
+npm i -g react-create-app
 
 git config --global core.editor nvim
 
