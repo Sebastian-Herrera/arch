@@ -52,7 +52,7 @@ echo -e '#!/bin/sh\nexec qtile' > ~/.xinitrc
 
 echo "0" | sudo -S localectl set-x11-keymap es
 
-bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
+#bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
 
 #echo -e 'defaults.pcm.card 2\ndefaults.ctl.card 2' | sudo tee -a /etc/asound.conf
 #pactl set-default-sink 'alsa_output.usb-Focusrite_Scarlett_6i6_USB_00011521-00.analog-surround-51'
