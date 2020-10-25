@@ -36,10 +36,10 @@ yay -Sy --noconfirm nautilus-open-any-terminal escrotum-git bottom google-chrome
 #Starship
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/plugins/zsh-syntax-highlighting
-curl -O https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/archlinux/archlinux.plugin.zsh && mkdir ~/.zsh/plugins/archlinux/ && mv archlinux.plugin.zsh ~/.zsh/archlinux/
-curl -O https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh && mkdir ~/.zsh/plugins/colored-man-pages/ && mv colored-man-pages.plugin.zsh ~/.zsh/colored-man-pages/
-curl -O https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/history-substring-search/history-substring-search.zsh && mkdir ~/.zsh/plugins/history-substring-search/ && mv history-substring-search.zsh ~/.zsh/history-substring-search/
-curl -O https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/git/git.plugin.zsh && mkdir ~/.zsh/plugins/git/ && mv git.plugin.zsh ~/.zsh/git/
+wget -P ~/.zsh/plugins/archlinux/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/archlinux/archlinux.plugin.zsh
+wget -P ~/.zsh/plugins/colored-man-pages/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh
+wget -P ~/.zsh/plugins/history-substring-search/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/history-substring-search/history-substring-search.zsh
+wget -P ~/.zsh/plugins/git/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/git/git.plugin.zsh
 
 #OHMYZSH
 #echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
