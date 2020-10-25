@@ -134,7 +134,7 @@ sudo systemctl enable lightdm.service
 curl -LJO https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 sudo unzip ngrok-stable-linux-amd64.zip -d /usr/local/bin/ && rm -fv ngrok-stable-linux-amd64.zip
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | zsh
 source ~/.zshrc
 nvm install --lts
 
