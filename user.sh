@@ -36,6 +36,7 @@ yay -Sy --noconfirm nautilus-open-any-terminal escrotum-git bottom google-chrome
 #Starship
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
+curl -O https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/archlinux/archlinux.plugin.zsh && mkdir ~/.zsh/archlinux/ && mv archlinux.plugin.zsh ~/.zsh/archlinux/
 curl -O https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh && mkdir ~/.zsh/colored-man-pages/ && mv colored-man-pages.plugin.zsh ~/.zsh/colored-man-pages/
 curl -O https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/history-substring-search/history-substring-search.zsh && mkdir ~/.zsh/history-substring-search/ && mv history-substring-search.zsh ~/.zsh/history-substring-search/
 curl -O https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/git/git.plugin.zsh && mkdir ~/.zsh/git/ && mv git.plugin.zsh ~/.zsh/git/
