@@ -33,10 +33,15 @@ curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import - && gpg 
 yay -Sy --noconfirm zsh-theme-powerlevel10k-git nautilus-open-any-terminal escrotum-git bottom google-chrome visual-studio-code-bin notion-app spotify spicetify-cli uget-integrator-chrome
 #localectl set-locale LANG=en_US.UTF-8
 
+#Starship
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
+
+#OHMYZSH
 #echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search && bindkey '^[[A' history-substring-search-up && bindkey '^[[B' history-substring-search-down
+#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+#git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+#git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search && bindkey '^[[A' history-substring-search-up && bindkey '^[[B' history-substring-search-down
 #perl -pi -e 's/(?<=plugins=).*/(zsh-syntax-highlighting zsh-autosuggestions archlinux colored-man-pages history-substring-search git)/g' ~/.zshrc
 
 xdg-user-dirs-update
