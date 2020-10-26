@@ -71,6 +71,10 @@ echo "0" | sudo -S localectl set-x11-keymap es
 #pactl set-default-sink 'alsa_output.usb-Focusrite_Scarlett_6i6_USB_00011521-00.analog-surround-51'
 #pactl set-default-source 'alsa_input.usb-Focusrite_Scarlett_6i6_USB_00011521-00.multichannel-input'
 
+DRACULA_URL=$(curl https://api.github.com/repos/dracula/gtk/releases/latest | grep "h.*a\.tar" | cut -d '"' -f 4)
+curl -Ljo dracula.tar.xz $DRACULA_URL
+sudo tar -xvf dracula.tar.xz -C /usr/share/themes/ && rm dracula.tar.xz
+
 git clone https://github.com/fontello/typicons.font.git && (cd typicons.font && sudo mv font /usr/share/fonts/typicons) && rm -rfv typicons.font/
 curl -L -o material-design-icons.ttf https://www.dropbox.com/s/4fevs095ho7xtf9/material-design-icons.ttf\?dl\=1 && sudo mv material-design-icons.ttf /usr/share/fonts/
 curl -L -o icomoon.zip https://www.dropbox.com/s/hrkub2yo9iapljz/icomoon.zip\?dl\=1 && sudo unzip icomoon.zip -d /usr/share/fonts && rm icomoon.zip
