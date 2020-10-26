@@ -1,6 +1,6 @@
 #!/bin/sh
 
 # Composer
-picom &
+#picom &
 # Wallpaper
 hsetroot -solid '#1e252c'
