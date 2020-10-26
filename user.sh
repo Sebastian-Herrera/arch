@@ -125,6 +125,7 @@ sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
 spicetify
 spicetify backup apply enable-devtool
+spicetify update
 
 #git clone https://github.com/cylgom/ly.git
 #(cd ly && make github && make && sudo make install)
