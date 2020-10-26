@@ -34,6 +34,7 @@ yay -Sy --noconfirm nautilus-open-any-terminal escrotum-git bottom google-chrome
 #localectl set-locale LANG=en_US.UTF-8
 
 #Starship
+wget -P ~/.zsh/lib/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/history.zsh
 wget -P ~/.zsh/lib/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/key-bindings.zsh
 wget -P ~/.zsh/lib/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/grep.zsh
 wget -P ~/.zsh/lib/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/completion.zsh
