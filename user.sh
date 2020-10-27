@@ -63,7 +63,7 @@ gsettings set com.github.stunkymonkey.nautilus-open-any-terminal new-tab true
 #mkdir -p ~/.config/qtile/
 #cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
 chmod +x ~/.config/qtile/autostart.sh
-echo -e '#!/bin/sh\nexec qtile' > ~/.xinitrc
+#echo -e '#!/bin/sh\nexec qtile' > ~/.xinitrc
 
 echo "0" | sudo -S localectl set-x11-keymap es
 
@@ -169,7 +169,6 @@ sudo passwd root
 echo $changepass"oCBICAg4paI4paI4oCB4paI4paI4paI4paI4paI4paI4paI4oCB4paI4paI4paI4paI4paI4paI4paI4oCB4paI4paI4paI4paI4paI4paI4oCBICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIArilojilojigIEgICDilojilojigIHilojilojigIHigIHigIHigIHigIHigIHilojilojigIHigIHigIHigIHigIHigIHilojilojigIHigIHigIHilojilojigIEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAK4paI4paI4oCBICAg4paI4paI4oCB4paI4paI4paI4paI4paI4paI4paI4oCB4paI4paI4paI4paI4paI4oCBICDilojilojilojilojilojilojigIHigIEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAK4paI4paI4oCBICAg4paI4paI4oCB4oCB4oCB4oCB4oCB4oCB4paI4paI4oCB4paI4paI4oCB4oCB4oCB4oCBICDilojilojigIHigIHigIHilojilojigIEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAK4oCB4paI4paI4paI4paI4paI4paI4oCB4oCB4paI4paI4paI4paI4paI4paI4paI4oCB4paI4paI4paI4paI4paI4paI4paI4oCB4paI4paI4oCBICDilojilojigIEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKIOKAgeKAgeKAgeKAgeKAgeKAgeKAgSDigIHigIHigIHigIHigIHigIHigIHigIHigIHigIHigIHigIHigIHigIHigIHigIHigIHigIHigIEgIOKAgeKAgeKAgSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAK" | base64 -d
 passwd
 
-echo '' | sudo tee ~/.zlogin
-rm -fv ~/user.sh #~/.zshrc.pre-oh-my-zsh 
+rm -fv ~/.zlogin ~/user.sh #~/.zshrc.pre-oh-my-zsh 
 #startx
 reboot
