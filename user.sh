@@ -28,10 +28,10 @@ sudo sed -i 's/MODULES=()/MODULES=(nvidia)/' /etc/mkinitcpio.conf
 sudo mkinitcpio -p linux
 #sudo nvidia-xconfig
 
-echo '0' | sudo pacman -Sy --noconfirm numlockx xdg-user-dirs neofetch noto-fonts ttf-apple-emoji ttf-liberation unzip awesome qtile picom hsetroot gtk2 gtk3 alacritty rofi dunst xdg-utils perl-file-mimeinfo ranger nautilus pulseaudio playerctl unrar fzf catimg redshift ntfs-3g wget gnome-keyring uget zathura zathura-pdf-mupdf vlc
+echo '0' | sudo pacman -Sy --noconfirm numlockx xdg-user-dirs neofetch noto-fonts ttf-apple-emoji ttf-liberation unzip awesome qtile picom hsetroot gtk2 gtk3 alacritty rofi rofimoji dunst xdg-utils perl-file-mimeinfo ranger nautilus pulseaudio playerctl unrar fzf catimg redshift ntfs-3g wget gnome-keyring uget zathura zathura-pdf-mupdf vlc
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 #curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import - && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
-yay -Sy --noconfirm nautilus-open-any-terminal escrotum-git bottom google-chrome visual-studio-code-bin notion-app uget-integrator-chrome #zsh-theme-powerlevel10k-git spotify spicetify-cli
+yay -Sy --noconfirm nautilus-open-any-terminal escrotum-git bottom google-chrome uget-integrator-chrome visual-studio-code-bin notion-app spotify spicetify-cli #zsh-theme-powerlevel10k-git
 #localectl set-locale LANG=en_US.UTF-8
 
 #Starship
