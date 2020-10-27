@@ -31,7 +31,9 @@ mv ~/arch/.config/ /mnt/home/herrera/
 
 cp -rfv ~/arch/etc/ /mnt/
 
-mv ~/arch/.zshrc /mnt/home/herrera/ && mv ~/arch/.p10k.zsh /mnt/home/herrera/ && mv ~/arch/.prettierrc /mnt/home/herrera/ && mv ~/arch/.stylelintrc /mnt/home/herrera/
+rm -rfv ~/arch/.git 
+mv ~/arch/.* /mnt/home/herrera/
+#mv ~/arch/.zshrc /mnt/home/herrera/ && mv ~/arch/.p10k.zsh /mnt/home/herrera/ && mv ~/arch/.prettierrc /mnt/home/herrera/ && mv ~/arch/.stylelintrc /mnt/home/herrera/
 
 umount -R /mnt
 reboot
