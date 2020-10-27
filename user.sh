@@ -103,11 +103,6 @@ rm -rfv tsetup.tar.xz
 
 mkdir ~/Applications/
 
-JITSI_URL=$(curl -s https://api.github.com/repos/jitsi/jitsi-meet-electron/releases/latest | grep "h.*\.AppImage" | cut -d '"' -f 4)
-curl -LJo jitsi-meet.AppImage $JITSI_URL
-mv jitsi-meet.AppImage ~/Applications
-chmod +x ~/Applications/jitsi-meet.AppImage
-
 RESPONSIVELY_URL=$(curl -s https://api.github.com/repos/responsively-org/responsively-app/releases/latest | grep "h.*\.AppImage" | cut -d '"' -f 4)
 curl -LJo ResponsivelyApp.AppImage $RESPONSIVELY_URL
 mv ResponsivelyApp.AppImage ~/Applications/
