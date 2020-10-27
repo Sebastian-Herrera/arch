@@ -94,9 +94,6 @@ SCIENTIFICA_URL=$(curl https://api.github.com/repos/NerdyPepper/scientifica/rele
 curl -LJo scientifica.tar $SCIENTIFICA_URL
 sudo tar -xvf scientifica.tar -C /usr/share/fonts/ && rm scientifica.tar
 
-#mkdir .config/gtk-3.0/
-#echo -e "[Settings]\ngtk-application-prefer-dark-theme=1" > .config/gtk-3.0/settings.ini
-
 TELEGRAM_URL=$(curl -s https://api.github.com/repos/telegramdesktop/tdesktop/releases/latest | grep "h.*p\..*tar\.xz" | cut -d '"' -f 4)
 curl -LJo tsetup.tar.xz $TELEGRAM_URL
 sudo mkdir -p /opt/telegram/
