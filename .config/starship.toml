@@ -1,1 +1,11 @@
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
 
+[jobs]
+symbol = "✦ "
+
+[memory_usage]
+threshold = 70
+format="via $symbol[${ram_pct}]($style) "
+disabled = false
