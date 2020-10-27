@@ -125,7 +125,7 @@ spicetify backup apply enable-devtool
 spicetify update
 wget -P ~/.config/spicetify/Themes/Dribbblish https://raw.githubusercontent.com/morpheusthewhite/spicetify-themes/master/Dribbblish/user.css
 wget -P ~/.config/spicetify/Extensions https://raw.githubusercontent.com/morpheusthewhite/spicetify-themes/master/Dribbblish/dribbblish.js
-spicetify config extensions dribbblish.js fullAppDisplay.js
+spicetify config extensions dribbblish.js extensions fullAppDisplay.js
 spicetify config current_theme Dribbblish color_scheme amarena
 spicetify config inject_css 1 replace_colors 1 overwrite_assets 1
 spicetify apply
