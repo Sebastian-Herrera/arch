@@ -8,7 +8,7 @@ set -euo pipefail
 #        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 #fi
 
-mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+#mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
 
 echo '0' | sudo -S chown -Rv herrera:herrera ~/
 echo '0' | sudo -S pacman -Syyu
