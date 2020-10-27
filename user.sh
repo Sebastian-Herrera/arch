@@ -1,12 +1,12 @@
 #!/bin/sh
 set -euo pipefail
 
-if [ -d ~/.oh-my-zsh/ ]
-then
-        echo "..."
-else
-        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
+#if [ -d ~/.oh-my-zsh/ ]
+#then
+#        echo "..."
+#else
+#        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#fi
 
 mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
 
