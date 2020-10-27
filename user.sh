@@ -107,11 +107,13 @@ RESPONSIVELY_URL=$(curl -s https://api.github.com/repos/responsively-org/respons
 curl -LJo ResponsivelyApp.AppImage $RESPONSIVELY_URL
 mv ResponsivelyApp.AppImage ~/Applications/
 chmod +x ~/Applications/ResponsivelyApp.AppImage
+sudo ln -s ~/Applications/ResponsivelyApp.AppImage /usr/local/bin/responsivelyApp
 
 MARKTEXT_URL=$(curl https://api.github.com/repos/marktext/marktext/releases/latest | grep "ht.*\.AppImage" | cut -d '"' -f 4)
 curl -LJo marktext.AppImage $MARKTEXT_URL
 mv marktext.AppImage ~/Applications
 chmod +x ~/Applications/marktext.AppImage
+sudo ln -s ~/Applications/marktext.AppImage /usr/local/bin/marktext
 
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
