@@ -68,6 +68,8 @@ gsettings set com.github.stunkymonkey.nautilus-open-any-terminal new-tab true
 chmod +x ~/.config/qtile/autostart.sh
 #echo -e '#!/bin/sh\nexec qtile' > ~/.xinitrc
 
+wget -P ~/.config/awesome/charitable https://raw.githubusercontent.com/frioux/charitable/master/init.lua
+
 echo "0" | sudo -S localectl set-x11-keymap es
 
 #bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
