@@ -150,7 +150,8 @@ keys = [
     Key([], "XF86AudioNext", lazy.spawn("playerctl --player=playerctld next")), #("omnipause next"),
     Key([mod], "XF86AudioPlay", lazy.spawn("playerctl --all-players stop")),
     # Screenshot
-    Key([], "Print", lazy.spawn("escrotum")),
+    Key([], "Print", lazy.spawn("escrotum --select $f ~/Pictures/%Y-%m-%d-%H:%M:%S_$wx$h_escrotum.png")),
+    Key([mod], "Print", lazy.spawn("escrotum $f ~/Pictures/%Y-%m-%d-%H:%M:%S_$wx$h_escrotum.png")),
 ]
 
 groups = [Group(i) for i in ["   ", " ﬏  ", "   ", "   ", "   ", "   ", "   "]] # 
@@ -212,11 +213,11 @@ screens = [
                     #   nf-fae-grav
                     #   nf-fae-galaxy
                     #   nf-fae-telescope
-                    #  
+                    # 
                     foreground="#6C6F93", #color16
                     fontsize=23,
                     ),
-                widget.GroupBox(                    
+                widget.GroupBox(
                     highlight_method = "block",
 	                urgent_alert_method = "block",
 
@@ -265,7 +266,7 @@ screens = [
                     # markup_focused='<span foreground="#94CF95"></span>  {}',
                     # markup_minimized="<b>This is bold.</b> <i>This is itallic.</i> <s>This is strikethrough.</s> <sub>This is subscript.</sub>",
                     # markup_minimized="<sup>This is superscript.</sup> <small>This makes the font smaller.</small> <big>This makes the font larger.</big>",
-                    # markup_minimized="<u>This is underlined text.</u> <tt>This uses a Monospace font.</tt> This is normal text UNCHANGED.", 
+                    # markup_minimized="<u>This is underlined text.</u> <tt>This uses a Monospace font.</tt> This is normal text UNCHANGED.",
                     # markup_minimized="<span foreground='blue'>Blue text (single quotes here)!</span> <span size='x-large'>Extra Large Text</span>",
                     # markup_minimized="<span font='30' foreground='red'>30 point text.</span>",
 
@@ -306,7 +307,7 @@ screens = [
                     # prefix_long_break='🌴 ',
                     prefix_inactive=' start', # pomodoro
                     prefix_active='祥 ', # clock
-                    prefix_break=' ', #  nf-fae-isle  
+                    prefix_break=' ', #  nf-fae-isle
                     prefix_long_break=' ', #  nf-pom-long_pause
                     prefix_paused=' pause', #   nf-mdi-beach
 
@@ -340,7 +341,7 @@ screens = [
                 # widget.CurrentLayoutIcon(
                 #     padding=10,
                 #     scale=0.55,
-                #     ),                
+                #     ),
                 widget.TextBox(
                     " ",
                     foreground="#6C6F93", #color16
