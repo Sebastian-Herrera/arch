@@ -1,4 +1,3 @@
--- * Ya se como obtener la funcionalidad de qtile de si seleciono el tag donde estoy, se vaya al ultimo tag en el que estuve, para hacer esto puedo hacer un if de que si el tag al que quiero ir es el mismo en el que estoy entonces use awful.tag.history.restore
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
