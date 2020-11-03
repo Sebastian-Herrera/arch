@@ -31,7 +31,7 @@ sudo mkinitcpio -p linux
 sudo sed -i '/IgnorePkg.*=/s/=/= linux linux-headers nvidia-340xx/g' /etc/pacman.conf
 sudo sed -i '/IgnorePkg.*=/s/^#//g' /etc/pacman.conf
 
-echo '0' | sudo pacman -Sy --noconfirm numlockx xdg-user-dirs neofetch noto-fonts ttf-apple-emoji ttf-liberation unzip awesome qtile picom hsetroot gtk2 gtk3 alacritty rofi rofimoji dunst xdg-utils perl-file-mimeinfo ranger nautilus pulseaudio playerctl unrar fzf catimg redshift ntfs-3g wget gnome-keyring uget zathura zathura-pdf-mupdf vlc python-pip
+echo '0' | sudo pacman -Sy --noconfirm numlockx xdg-user-dirs neofetch noto-fonts ttf-apple-emoji ttf-liberation unzip awesome qtile picom hsetroot gtk2 gtk3 alacritty rofi rofimoji dunst xdg-utils perl-file-mimeinfo ranger nautilus file-roller pulseaudio playerctl unrar fzf catimg redshift ntfs-3g wget gnome-keyring uget zathura zathura-pdf-mupdf vlc python-pip
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 #curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import - && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
 yay -Sy --noconfirm nautilus-open-any-terminal escrotum-git bottom glow google-chrome uget-integrator-chrome visual-studio-code-bin notion-app figma-linux spotify spicetify-cli #zsh-theme-powerlevel10k-git
