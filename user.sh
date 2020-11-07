@@ -120,6 +120,13 @@ mv marktext.AppImage ~/Applications
 chmod +x ~/Applications/marktext.AppImage
 sudo ln -s ~/Applications/marktext.AppImage /usr/local/bin/marktext
 
+EXERCISM_URL=$(curl -s https://api.github.com/repos/exercism/cli/releases/latest | grep "h.*linux-64.*tgz" | cut -d '"' -f 4)
+curl -LJO $EXERCISM_URL
+tar -zxvf exercism-linux-64bit.tgz
+sudo mv ~/exercism /usr/local/bin/
+wget -P ~/.zsh/plugins/exercism/ https://raw.githubusercontent.com/exercism/cli/master/shell/exercism_completion.zsh
+rm -rfv LICENSE README.md shell
+
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
 spicetify
