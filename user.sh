@@ -125,7 +125,7 @@ curl -LJO $EXERCISM_URL
 tar -zxvf exercism-linux-64bit.tgz
 sudo mv ~/exercism /usr/local/bin/
 wget -P ~/.zsh/plugins/exercism/ https://raw.githubusercontent.com/exercism/cli/master/shell/exercism_completion.zsh
-rm -rfv LICENSE README.md shell
+rm -rfv LICENSE README.md shell exercism-linux-64bit.tgz
 
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
