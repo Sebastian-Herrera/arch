@@ -1,17 +1,17 @@
 # https://github.com/hudochenkov/stylelint-config-hudochenkov/blob/master/order.js
 ---
 extends:
-  - 'stylelint-a11y/recommended'
-  - 'stylelint-config-standard'
+  - '$NVM_BIN/lib/node_modules/stylelint-a11y/recommended'
+  - '$NVM_BIN/lib/node_modules/stylelint-config-standard'
 plugins:
-  - 'stylelint-selector-bem-pattern'
-  - 'stylelint-order'
-  - 'stylelint-value-no-unknown-custom-properties'
-  - 'stylelint-use-nesting'
-  - 'stylelint-declaration-block-no-ignored-properties'
-  - 'stylelint-group-selectors'
-  - 'stylelint-high-performance-animation'
-  - 'stylelint-8-point-grid'
+  - '$NVM_BIN/lib/node_modules/stylelint-selector-bem-pattern'
+  - '$NVM_BIN/lib/node_modules/stylelint-order'
+  - '$NVM_BIN/lib/node_modules/stylelint-value-no-unknown-custom-properties'
+  - '$NVM_BIN/lib/node_modules/stylelint-use-nesting'
+  - '$NVM_BIN/lib/node_modules/stylelint-declaration-block-no-ignored-properties'
+  - '$NVM_BIN/lib/node_modules/stylelint-group-selectors'
+  - '$NVM_BIN/lib/node_modules/stylelint-high-performance-animation'
+  - '$NVM_BIN/lib/node_modules/stylelint-8-point-grid'
 rules:
   # indentation: tab
 
