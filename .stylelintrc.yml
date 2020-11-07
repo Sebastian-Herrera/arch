@@ -1,17 +1,17 @@
 # https://github.com/hudochenkov/stylelint-config-hudochenkov/blob/master/order.js
 ---
 extends:
-  - '$NVM_BIN/lib/node_modules/stylelint-a11y/recommended'
-  - '$NVM_BIN/lib/node_modules/stylelint-config-standard'
+  - '/home/$USER/.nvm/versions/node/$NODE_VERSION/lib/node_modules/stylelint-a11y/recommended'
+  - '/home/$USER/.nvm/versions/node/$NODE_VERSION/lib/node_modules/stylelint-config-standard'
 plugins:
-  - '$NVM_BIN/lib/node_modules/stylelint-selector-bem-pattern'
-  - '$NVM_BIN/lib/node_modules/stylelint-order'
-  - '$NVM_BIN/lib/node_modules/stylelint-value-no-unknown-custom-properties'
-  - '$NVM_BIN/lib/node_modules/stylelint-use-nesting'
-  - '$NVM_BIN/lib/node_modules/stylelint-declaration-block-no-ignored-properties'
-  - '$NVM_BIN/lib/node_modules/stylelint-group-selectors'
-  - '$NVM_BIN/lib/node_modules/stylelint-high-performance-animation'
-  - '$NVM_BIN/lib/node_modules/stylelint-8-point-grid'
+  - '/home/$USER/.nvm/versions/node/$NODE_VERSION/lib/node_modules/stylelint-selector-bem-pattern'
+  - '/home/$USER/.nvm/versions/node/$NODE_VERSION/lib/node_modules/stylelint-order'
+  - '/home/$USER/.nvm/versions/node/$NODE_VERSION/lib/node_modules/stylelint-value-no-unknown-custom-properties'
+  - '/home/$USER/.nvm/versions/node/$NODE_VERSION/lib/node_modules/stylelint-use-nesting'
+  - '/home/$USER/.nvm/versions/node/$NODE_VERSION/lib/node_modules/stylelint-declaration-block-no-ignored-properties'
+  - '/home/$USER/.nvm/versions/node/$NODE_VERSION/lib/node_modules/stylelint-group-selectors'
+  - '/home/$USER/.nvm/versions/node/$NODE_VERSION/lib/node_modules/stylelint-high-performance-animation'
+  - '/home/$USER/.nvm/versions/node/$NODE_VERSION/lib/node_modules/stylelint-8-point-grid'
 rules:
   # indentation: tab
 
