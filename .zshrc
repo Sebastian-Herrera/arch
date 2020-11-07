@@ -8,6 +8,7 @@ setopt SHARE_HISTORY
 setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_SPACE
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
 
 ZSH="$HOME/.zsh"
 alias ls='ls --color=auto'
@@ -21,10 +22,11 @@ source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/colored-man-pages/colored-man-pages.plugin.zsh
 source $ZSH/plugins/history-substring-search/history-substring-search.zsh
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 source $ZSH/plugins/git/git.plugin.zsh
 source $ZSH/plugins/archlinux/archlinux.plugin.zsh
+
+export fpath=($ZSH/functions $fpath)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
