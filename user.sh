@@ -152,7 +152,7 @@ sudo unzip ngrok-stable-linux-amd64.zip -d /usr/local/bin/ && rm -fv ngrok-stabl
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | zsh
 source ~/.zshrc
-nvm install --lts && sed -ie 's%$NVM_BIN%'"$NVM_BIN"'%g' ~/.stylelintrc.back.yml && sed -i 's/\/bin//g' ~/.stylelintrc.back.yml
+nvm install --lts && sed -ie 's%$NVM_BIN%'"$NVM_BIN"'%g' ~/.stylelintrc.yml && sed -i 's/\/bin//g' ~/.stylelintrc.yml
 
 git config --global core.editor nvim
 
