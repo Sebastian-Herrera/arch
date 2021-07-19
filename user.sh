@@ -70,7 +70,7 @@ chmod +x ~/.config/qtile/autostart.sh
 
 wget -P ~/.config/awesome/charitable https://raw.githubusercontent.com/frioux/charitable/master/init.lua
 
-echo "0" | sudo -S localectl set-x11-keymap es
+echo "0" | sudo -S localectl set-x11-keymap us
 
 #bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
 
