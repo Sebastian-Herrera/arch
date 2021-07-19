@@ -12,7 +12,7 @@ sed -i '/week 7/a\first_weekday 2\nfirst_workday 2' /usr/share/i18n/locales/en_U
 locale-gen
 
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
-echo "KEYMAP=es" > /etc/vconsole.conf
+echo "KEYMAP=us" > /etc/vconsole.conf
 
 echo "herrera" > /etc/hostname
 
